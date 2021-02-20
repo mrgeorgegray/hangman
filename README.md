@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Hangman App
+
+[![CircleCI](https://circleci.com/gh/mrgeorgegray/hangman.svg?style=svg)](https://circleci.com/gh/mrgeorgegray/hangman)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
