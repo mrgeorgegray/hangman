@@ -6,7 +6,7 @@ jobs:
         ignore:
           - gh-pages
     docker:
-      - image: circleci/node:11.4.0
+      - image: circleci/node:15.9.0
     steps:
       - checkout
       - restore_cache:
