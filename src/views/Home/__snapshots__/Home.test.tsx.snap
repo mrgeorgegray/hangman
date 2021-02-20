@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders 1`] = `
+<div>
+  <div>
+    <h1>
+      Welcome to Hangman!
+    </h1>
+    <p>
+      Press the button to get started...
+    </p>
+    <button>
+      Start Game
+    </button>
+  </div>
+</div>
+`;

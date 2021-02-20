@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Letter /> highlights correct 1`] = `
+<div>
+  <button
+    style="border: 1px solid #c3c3c3; color: green; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
+  >
+    a
+  </button>
+</div>
+`;
+
+exports[`<Letter /> highlights incorrect 1`] = `
+<div>
+  <button
+    style="border: 1px solid #c3c3c3; color: red; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
+  >
+    a
+  </button>
+</div>
+`;
+
+exports[`<Letter /> renders 1`] = `
+<div>
+  <button
+    style="border: 1px solid #c3c3c3; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
+  >
+    a
+  </button>
+</div>
+`;

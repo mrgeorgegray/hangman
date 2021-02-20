@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Solution /> renders 1`] = `
+<div>
+  <div
+    style="font-size: 32px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;"
+  >
+    s_lution
+  </div>
+</div>
+`;

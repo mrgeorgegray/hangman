@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> renders home page when 'notStarted'  1`] = `
+<div>
+  <header>
+    <p>
+      Hangman App
+    </p>
+    <hr />
+  </header>
+  <main>
+    <div>
+      <h1>
+        Welcome to Hangman!
+      </h1>
+      <p>
+        Press the button to get started...
+      </p>
+      <button>
+        Start Game
+      </button>
+    </div>
+  </main>
+  <footer
+    style="position: fixed; left: 0px; bottom: 0px; width: calc(100% - 20px); padding: 10px;"
+  >
+    <hr />
+    <p>
+      Built with create-react-app.
+    </p>
+  </footer>
+</div>
+`;

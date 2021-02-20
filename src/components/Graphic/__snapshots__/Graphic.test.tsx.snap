@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Graphic /> renders 1`] = `
+<div>
+  <div
+    style="width: 160px; height: 160px; background-color: rgb(195, 195, 195); text-align: center; padding: 20px; margin-bottom: 20px;"
+  >
+    <p>
+      Hangman graphic @todo...
+    </p>
+    <p>
+      (chances remaining: 
+      2
+      )
+    </p>
+  </div>
+</div>
+`;
