@@ -20,17 +20,23 @@ const Letter = React.memo<LetterProps>(
         border-radius: 50%;
         color: ${shouldHighlight ? (isCorrect ? `green` : `red`) : undefined};
         display: inline-block;
-        font-size: 34px;
-        height: 50px;
+        font-size: 22px;
+        height: 30px;
         margin: 5px;
         outline: none;
         padding: 4px 10px 10px 10px;
         text-align: center;
         transition: border 200ms ease-out;
-        width: 50px;
+        width: 30px;
         &:hover:enabled {
           border: 1px solid #30353b;
           cursor: pointer;
+        }
+
+        @media (min-width: 500px) {
+          font-size: 34px;
+          height: 50px;
+          width: 50px;
         }
       `}
     >
