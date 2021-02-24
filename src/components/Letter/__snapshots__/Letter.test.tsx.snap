@@ -3,7 +3,7 @@
 exports[`<Letter /> highlights correct 1`] = `
 <div>
   <button
-    style="border: 1px solid #c3c3c3; color: green; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
+    class="css-1p99edz"
   >
     a
   </button>
@@ -13,7 +13,7 @@ exports[`<Letter /> highlights correct 1`] = `
 exports[`<Letter /> highlights incorrect 1`] = `
 <div>
   <button
-    style="border: 1px solid #c3c3c3; color: red; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
+    class="css-1j52w6s"
   >
     a
   </button>
@@ -23,7 +23,7 @@ exports[`<Letter /> highlights incorrect 1`] = `
 exports[`<Letter /> renders 1`] = `
 <div>
   <button
-    style="border: 1px solid #c3c3c3; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
+    class="css-fg2fpd"
   >
     a
   </button>

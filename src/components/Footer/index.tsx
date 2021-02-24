@@ -1,15 +1,19 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 const Footer = () => (
   <footer
-    style={{
-      position: "fixed",
-      left: 0,
-      bottom: 0,
-      width: "calc(100% - 20px)",
-      padding: 10,
-    }}
+    css={css`
+      flex-shrink: 0;
+      font-size: 14px;
+      text-align: center;
+    `}
   >
     <hr />
-    <p>Built with create-react-app.</p>
+    <p>
+      Read more about{" "}
+      <a href="https://github.com/mrgeorgegray/hangman">this project</a>.
+    </p>
   </footer>
 );
 

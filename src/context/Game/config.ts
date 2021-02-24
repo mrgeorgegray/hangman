@@ -19,7 +19,7 @@ STARTING_CHANCES
 how many guesses a user
 has before the Hangman is dead
 =============== */
-export const STARTING_CHANCES = 7;
+export const STARTING_CHANCES = 6;
 
 /* ===============
 SOLUTIONS

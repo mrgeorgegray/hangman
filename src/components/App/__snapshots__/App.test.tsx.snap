@@ -2,32 +2,47 @@
 
 exports[`<App /> renders home page when 'notStarted'  1`] = `
 <div>
-  <header>
-    <p>
-      Hangman App
-    </p>
-    <hr />
-  </header>
-  <main>
-    <div>
-      <h1>
-        Welcome to Hangman!
-      </h1>
-      <p>
-        Press the button to get started...
-      </p>
-      <button>
-        Start Game
-      </button>
-    </div>
-  </main>
-  <footer
-    style="position: fixed; left: 0px; bottom: 0px; width: calc(100% - 20px); padding: 10px;"
+  <div
+    class="css-vk9bdx-App"
   >
-    <hr />
-    <p>
-      Built with create-react-app.
-    </p>
-  </footer>
+    <main
+      class="css-zjc6ny-App"
+    >
+      <div
+        class="css-1t7c1v1-HomePage"
+      >
+        <h1
+          class="css-tnsnpe-HomePage"
+        >
+          Welcome to Hangman!
+        </h1>
+        <p
+          class="css-11dnfsa-HomePage"
+        >
+          A simple game built with React
+        </p>
+        <button
+          class="css-1nzsci0-HomePage"
+        >
+          Start Game
+        </button>
+      </div>
+    </main>
+    <footer
+      class="css-krukqz-Footer"
+    >
+      <hr />
+      <p>
+        Read more about
+         
+        <a
+          href="https://github.com/mrgeorgegray/hangman"
+        >
+          this project
+        </a>
+        .
+      </p>
+    </footer>
+  </div>
 </div>
 `;

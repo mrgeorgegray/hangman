@@ -3,7 +3,7 @@
 exports[`<Action /> renders 1`] = `
 <div>
   <button
-    style="margin-right: 6px;"
+    class="css-554s8a-Action"
   >
     Click me
   </button>

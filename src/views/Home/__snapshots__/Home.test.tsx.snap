@@ -2,14 +2,22 @@
 
 exports[`<Home /> renders 1`] = `
 <div>
-  <div>
-    <h1>
+  <div
+    class="css-1t7c1v1-HomePage"
+  >
+    <h1
+      class="css-tnsnpe-HomePage"
+    >
       Welcome to Hangman!
     </h1>
-    <p>
-      Press the button to get started...
+    <p
+      class="css-11dnfsa-HomePage"
+    >
+      A simple game built with React
     </p>
-    <button>
+    <button
+      class="css-1nzsci0-HomePage"
+    >
       Start Game
     </button>
   </div>

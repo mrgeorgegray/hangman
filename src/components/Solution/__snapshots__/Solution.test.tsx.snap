@@ -3,7 +3,7 @@
 exports[`<Solution /> renders 1`] = `
 <div>
   <div
-    style="font-size: 32px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;"
+    class="css-v7pb1x-Solution"
   >
     s_lution
   </div>

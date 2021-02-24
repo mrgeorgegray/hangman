@@ -3,11 +3,18 @@
 exports[`<Footer /> renders 1`] = `
 <div>
   <footer
-    style="position: fixed; left: 0px; bottom: 0px; width: calc(100% - 20px); padding: 10px;"
+    class="css-krukqz-Footer"
   >
     <hr />
     <p>
-      Built with create-react-app.
+      Read more about
+       
+      <a
+        href="https://github.com/mrgeorgegray/hangman"
+      >
+        this project
+      </a>
+      .
     </p>
   </footer>
 </div>
