@@ -1,6 +1,13 @@
 import React, { createContext, useContext, useReducer } from "react";
+import { Immutable } from "immer";
 
-import { initialState, curriedGameReducer, GameAction } from "./state";
+import {
+  initialState,
+  curriedGameReducer,
+  GameAction,
+  GameState,
+} from "./state";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 // ===============
 // Setup
@@ -42,7 +49,15 @@ export function useGameState() {
 // Context
 // ===============
 const GameContext: React.FC = ({ children }) => {
-  const [state, dispatch] = useReducer(curriedGameReducer, initialState);
+  const [gameState, setGameState] = useLocalStorage<Immutable<GameState>>(
+    "gameState",
+    initialState
+  );
+  const [state, dispatch] = useReducer(curriedGameReducer, gameState);
+
+  React.useEffect(() => {
+    setGameState(state);
+  }, [state, setGameState]);
 
   return (
     <GameDispatchContext.Provider value={dispatch}>
