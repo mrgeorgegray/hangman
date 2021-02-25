@@ -18,7 +18,7 @@ describe.only("<Letter />", () => {
 
   it("renders", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Letter {...defaultProps} />
       </ThemeProvider>
     );
@@ -27,7 +27,7 @@ describe.only("<Letter />", () => {
 
   it("handles clicks", () => {
     const { getByText } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Letter {...defaultProps} />
       </ThemeProvider>
     );
@@ -37,7 +37,7 @@ describe.only("<Letter />", () => {
 
   it("is disabled", () => {
     const { getByText } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Letter {...defaultProps} isDisabled={true} />
       </ThemeProvider>
     );
@@ -50,7 +50,7 @@ describe.only("<Letter />", () => {
 
   it("highlights correct", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Letter {...defaultProps} shouldHighlight={true} isCorrect={true} />
       </ThemeProvider>
     );
@@ -59,7 +59,7 @@ describe.only("<Letter />", () => {
 
   it("highlights incorrect", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Letter {...defaultProps} shouldHighlight={true} />
       </ThemeProvider>
     );

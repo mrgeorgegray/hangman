@@ -8,7 +8,7 @@ import { THEMES } from "../../config";
 describe("<Banner />", () => {
   it("renders a error state", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Banner type="error" message="uh oh" action={<span>Actions</span>} />
       </ThemeProvider>
     );
@@ -17,7 +17,7 @@ describe("<Banner />", () => {
 
   it("renders a success state", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Banner type="success" message="woohoo" action={<span>Actions</span>} />
       </ThemeProvider>
     );

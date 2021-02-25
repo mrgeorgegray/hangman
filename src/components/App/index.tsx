@@ -4,14 +4,24 @@ import React, { Fragment } from "react";
 import { css, Global, useTheme } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 
-import { useGameState } from "../../context/Game";
+import { useGameDispatch, useGameState } from "../../context/Game";
 import Game from "../../views/Game";
 import Home from "../../views/Home";
 import Footer from "../Footer";
+import ThemeSwitch from "../ThemeSwitch";
 
 const App: React.FC = () => {
   const { breakpoints, colors, fontSize, layout, space } = useTheme();
-  const { status } = useGameState();
+  const { status, theme } = useGameState();
+  const dispatch = useGameDispatch();
+
+  function handleThemeChange() {
+    if (theme === "dark") {
+      dispatch({ type: "setTheme", payload: { theme: "light" } });
+    } else {
+      dispatch({ type: "setTheme", payload: { theme: "dark" } });
+    }
+  }
 
   return (
     <Fragment>
@@ -60,6 +70,7 @@ const App: React.FC = () => {
           {status === "notStarted" ? <Home /> : <Game />}
         </main>
         <Footer />
+        <ThemeSwitch currentTheme={theme} handleChange={handleThemeChange} />
       </div>
     </Fragment>
   );

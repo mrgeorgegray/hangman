@@ -3,7 +3,7 @@
 exports[`<Banner /> renders a error state 1`] = `
 <div>
   <div
-    class="css-1t13ckc-Banner"
+    class="css-5sndt9-Banner"
   >
     <span
       class="css-19zhg3v-Banner"
@@ -22,7 +22,7 @@ exports[`<Banner /> renders a error state 1`] = `
 exports[`<Banner /> renders a success state 1`] = `
 <div>
   <div
-    class="css-1u3yox3-Banner"
+    class="css-ow0qxb-Banner"
   >
     <span
       class="css-19zhg3v-Banner"

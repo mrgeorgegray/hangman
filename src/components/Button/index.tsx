@@ -18,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, size, text, type }) => {
         background-color: ${colors.background};
         border: ${border.width}px solid ${colors.text};
         border-radius: ${border.radius}px;
+        color: ${colors.text};
         font-size: ${size === "large" ? fontSize[2] : fontSize[1]}px;
         outline: none;
         padding: ${size === "large" ? ` 16px 24px` : `12px 18px`};

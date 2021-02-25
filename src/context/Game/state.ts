@@ -1,6 +1,6 @@
 import produce, { Draft } from "immer";
 
-import { LETTERS, STARTING_CHANCES, SOLUTIONS } from "../../config";
+import { LETTERS, STARTING_CHANCES, SOLUTIONS, THEMES } from "../../config";
 import * as utils from "./utils";
 
 export enum GameStatus {
@@ -10,11 +10,14 @@ export enum GameStatus {
   Won = "won",
 }
 
+export type Theme = keyof typeof THEMES;
+
 // prettier-ignore
 export type GameAction =
   | { type: "giveup" }
   | { type: "guess"; payload: { letter: string }; }
   | { type: "quit" }
+  | { type: "setTheme"; payload: { theme: Theme }; }
   | { type: "start" };
 
 export interface GameState {
@@ -24,6 +27,7 @@ export interface GameState {
   solution: string;
   solutionFormatted: string;
   status: GameStatus;
+  theme: Theme;
 }
 
 export const initialState: GameState = {
@@ -33,6 +37,7 @@ export const initialState: GameState = {
   solution: "",
   solutionFormatted: "",
   status: GameStatus.NotStarted,
+  theme: "light",
 };
 
 const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
@@ -79,6 +84,11 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
       if (draft.chancesRemaining === 0) {
         draft.status = GameStatus.Lost;
       }
+      return;
+    }
+
+    case "setTheme": {
+      draft.theme = action.payload.theme;
       return;
     }
 

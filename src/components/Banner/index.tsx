@@ -14,7 +14,7 @@ const Banner: React.FC<BannerProps> = ({ action, message, type }) => {
   return (
     <div
       css={css`
-        border: ${border.width}px solid ${colors.text};
+        border: ${border.width}px solid ${border.color};
         border-radius: ${border.radius}px;
         padding: ${space[2]}px;
         margin-top: ${space[2]}px;

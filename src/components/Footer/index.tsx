@@ -2,12 +2,13 @@
 import { css, useTheme } from "@emotion/react";
 
 const Footer: React.FC = () => {
-  const theme = useTheme();
+  const { fontSize } = useTheme();
+
   return (
     <footer
       css={css`
         flex-shrink: 0;
-        font-size: ${theme.fontSize[0]}px;
+        font-size: ${fontSize[0]}px;
         text-align: center;
       `}
     >

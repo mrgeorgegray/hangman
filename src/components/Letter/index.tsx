@@ -25,7 +25,7 @@ const Letter = React.memo<LetterProps>(
             ? isCorrect
               ? colors.success
               : colors.error
-            : undefined};
+            : colors.text};
           display: inline-block;
           font-size: ${fontSize[2]}px;
           height: 30px;

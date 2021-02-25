@@ -11,7 +11,7 @@ describe("<Button />", () => {
 
   it("renders error", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Button type="error" onClick={onClick} text={text} />
       </ThemeProvider>
     );
@@ -20,7 +20,7 @@ describe("<Button />", () => {
 
   it("renders success", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Button type="success" onClick={onClick} text={text} />
       </ThemeProvider>
     );
@@ -29,7 +29,7 @@ describe("<Button />", () => {
 
   it("renders warning", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Button type="warning" onClick={onClick} text={text} />
       </ThemeProvider>
     );
@@ -38,7 +38,7 @@ describe("<Button />", () => {
 
   it("handles clicks", () => {
     const { getByText } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Button type="error" onClick={onClick} text={text} />
       </ThemeProvider>
     );

@@ -8,7 +8,7 @@ import { THEMES } from "../../config";
 describe("<Solution />", () => {
   it("renders", () => {
     const { container } = render(
-      <ThemeProvider theme={THEMES.lightTheme}>
+      <ThemeProvider theme={THEMES.light}>
         <Solution text="s_lution" />
       </ThemeProvider>
     );

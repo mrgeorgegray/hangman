@@ -26,6 +26,7 @@ describe("GameState", () => {
       solution: solution,
       solutionFormatted: utils.formatSolution(solution, []),
       status: GameStatus.Playing,
+      theme: initialState.theme,
     });
   });
 
@@ -35,6 +36,18 @@ describe("GameState", () => {
     });
 
     expect(updatedState).toEqual(initialState);
+  });
+
+  it("switches theme", () => {
+    const updatedState = curriedGameReducer(playingState, {
+      type: "setTheme",
+      payload: { theme: "dark" },
+    });
+
+    expect(updatedState).toEqual({
+      ...playingState,
+      theme: "dark",
+    });
   });
 
   it("giveups a game", () => {
@@ -49,6 +62,7 @@ describe("GameState", () => {
       solution: solution,
       solutionFormatted: solution,
       status: GameStatus.Lost,
+      theme: initialState.theme,
     });
   });
 

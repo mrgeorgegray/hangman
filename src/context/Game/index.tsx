@@ -61,10 +61,16 @@ const GameContext: React.FC = ({ children }) => {
     setGameState(state);
   }, [state, setGameState]);
 
+  let theme = THEMES.light;
+
+  if (state.theme === "dark") {
+    theme = THEMES.dark;
+  }
+
   return (
     <GameDispatchContext.Provider value={dispatch}>
       <GameStateContext.Provider value={state}>
-        <ThemeProvider theme={THEMES.lightTheme}>{children}</ThemeProvider>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </GameStateContext.Provider>
     </GameDispatchContext.Provider>
   );

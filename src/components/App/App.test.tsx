@@ -1,14 +1,18 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { ThemeProvider } from "@emotion/react";
 
 import App from ".";
 import GameContext from "../../context/Game";
+import { THEMES } from "../../config";
 
 describe("<App />", () => {
   it("renders home page when 'notStarted' ", () => {
     const { container } = render(
       <GameContext>
-        <App />
+        <ThemeProvider theme={THEMES.light}>
+          <App />
+        </ThemeProvider>
       </GameContext>
     );
 

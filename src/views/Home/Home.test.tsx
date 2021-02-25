@@ -14,7 +14,7 @@ describe("<Home />", () => {
     const { container } = render(
       <GameDispatchContext.Provider value={mockDispatch}>
         <GameStateContext.Provider value={initialState}>
-          <ThemeProvider theme={THEMES.lightTheme}>
+          <ThemeProvider theme={THEMES.light}>
             <Home />
           </ThemeProvider>
         </GameStateContext.Provider>
@@ -27,7 +27,7 @@ describe("<Home />", () => {
     const { getByText } = render(
       <GameDispatchContext.Provider value={mockDispatch}>
         <GameStateContext.Provider value={initialState}>
-          <ThemeProvider theme={THEMES.lightTheme}>
+          <ThemeProvider theme={THEMES.light}>
             <Home />
           </ThemeProvider>
         </GameStateContext.Provider>

@@ -8,8 +8,8 @@ interface HangmanProps {
 }
 
 const Hangman = React.memo<HangmanProps>(({ chancesRemaining }) => {
-  const { breakpoints, colors, hangman, transitions } = useTheme();
-  const fillColor = colors.text;
+  const { breakpoints, hangman, transitions } = useTheme();
+  const fillColor = hangman.fill;
   const showGallows = true;
   const showHead = chancesRemaining <= 5;
   const showBody = chancesRemaining <= 4;

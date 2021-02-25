@@ -1,5 +1,5 @@
 import movies from "./movies";
-import { lightTheme } from "./themes";
+import { darkTheme, lightTheme } from "./themes";
 
 /* ===============
 STARTING_CHANCES
@@ -36,5 +36,6 @@ THEME
 @todo dark, a11y, etc.
 =============== */
 export const THEMES = {
-  lightTheme,
+  dark: darkTheme,
+  light: lightTheme,
 };

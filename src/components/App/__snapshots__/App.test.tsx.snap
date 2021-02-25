@@ -22,7 +22,7 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
           A simple game built with React
         </p>
         <button
-          class="css-yl7evr-Button"
+          class="css-9ui8di-Button"
         >
           Start Game
         </button>
@@ -43,6 +43,40 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
         .
       </p>
     </footer>
+    <label
+      class="css-ianvmh-ThemeSwitch"
+      for="toggle"
+    >
+      <div
+        class="css-11cjlcs-ThemeSwitch"
+      >
+        <span
+          class="css-19pqaj4-ThemeSwitch"
+        >
+          Enable Dark Mode
+        </span>
+        <div
+          class="css-1wv9vcd-ThemeSwitch"
+        >
+          <svg
+            class="css-38vt6j-ThemeSwitch"
+          >
+            sun.svg
+          </svg>
+          <svg
+            class="css-38vt6j-ThemeSwitch"
+          >
+            moon.svg
+          </svg>
+        </div>
+        <input
+          class="css-16w7pi8-ThemeSwitch"
+          id="toggle"
+          name="toggle"
+          type="checkbox"
+        />
+      </div>
+    </label>
   </div>
 </div>
 `;

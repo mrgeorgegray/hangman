@@ -5,6 +5,7 @@ declare module "@emotion/react" {
   function useTheme(): Theme;
   export interface Theme {
     border: {
+      color: string;
       radius: number;
       width: number;
     };
@@ -25,6 +26,7 @@ declare module "@emotion/react" {
       warning: string;
     };
     hangman: {
+      fill: string;
       stroke: string;
     };
     layout: {
