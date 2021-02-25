@@ -22,7 +22,7 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
           A simple game built with React
         </p>
         <button
-          class="css-9ui8di-Button"
+          class="css-13226zv-Button"
         >
           Start Game
         </button>
@@ -44,11 +44,11 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
       </p>
     </footer>
     <label
-      class="css-ianvmh-ThemeSwitch"
+      class="css-wb7ks6-ThemeSwitch"
       for="toggle"
     >
       <div
-        class="css-11cjlcs-ThemeSwitch"
+        class="css-1u26quh-ThemeSwitch"
       >
         <span
           class="css-19pqaj4-ThemeSwitch"
@@ -56,15 +56,15 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
           Enable Dark Mode
         </span>
         <div
-          class="css-1wv9vcd-ThemeSwitch"
+          class="css-a9ujoi-ThemeSwitch"
         >
           <svg
-            class="css-38vt6j-ThemeSwitch"
+            class="css-17c7x7v-ThemeSwitch"
           >
             sun.svg
           </svg>
           <svg
-            class="css-38vt6j-ThemeSwitch"
+            class="css-14xrbjp-ThemeSwitch"
           >
             moon.svg
           </svg>

@@ -6,7 +6,7 @@ interface ButtonProps {
   onClick: () => void;
   size?: "large";
   text: string;
-  type: "error" | "success" | "warning";
+  type: "error" | "plain" | "success" | "warning";
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, size, text, type }) => {
@@ -31,6 +31,11 @@ const Button: React.FC<ButtonProps> = ({ onClick, size, text, type }) => {
           `
             background-color: ${colors.error};
             border-color: ${colors.error};
+          `}
+          ${type === "plain" &&
+          `
+            background-color: ${colors.text};
+            border-color: ${colors.text};
           `}
           ${type === "warning" &&
           `

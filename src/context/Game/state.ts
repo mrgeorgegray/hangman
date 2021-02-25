@@ -56,7 +56,13 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
     }
 
     case "quit": {
-      return initialState;
+      draft.chancesRemaining = initialState.chancesRemaining;
+      draft.guesses = initialState.guesses;
+      draft.letters = initialState.letters;
+      draft.solution = initialState.solution;
+      draft.solutionFormatted = initialState.solutionFormatted;
+      draft.status = initialState.status;
+      return;
     }
 
     case "giveup": {

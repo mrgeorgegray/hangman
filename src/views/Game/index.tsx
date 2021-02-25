@@ -81,7 +81,7 @@ const GamePage: React.FC = () => {
           type="error"
           message={`You Lost :-( the answer was "${solution}"`}
           action={
-            <Button type="success" onClick={handleNewGame} text="New Game" />
+            <Button type="plain" onClick={handleNewGame} text="New Game" />
           }
         />
       )}
@@ -90,7 +90,7 @@ const GamePage: React.FC = () => {
           type="success"
           message="Congratulations! You Won :-)"
           action={
-            <Button type="success" onClick={handleNewGame} text="New Game" />
+            <Button type="plain" onClick={handleNewGame} text="New Game" />
           }
         />
       )}

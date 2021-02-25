@@ -22,7 +22,7 @@ exports[`<Banner /> renders a error state 1`] = `
 exports[`<Banner /> renders a success state 1`] = `
 <div>
   <div
-    class="css-ow0qxb-Banner"
+    class="css-1gds19t-Banner"
   >
     <span
       class="css-19zhg3v-Banner"

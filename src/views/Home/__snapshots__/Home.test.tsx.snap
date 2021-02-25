@@ -16,7 +16,7 @@ exports[`<Home /> renders 1`] = `
       A simple game built with React
     </p>
     <button
-      class="css-9ui8di-Button"
+      class="css-13226zv-Button"
     >
       Start Game
     </button>

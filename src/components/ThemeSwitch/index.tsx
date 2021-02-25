@@ -22,32 +22,31 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
       css={css`
         display: block;
         margin: 0 auto ${space[2]}px;
-        width: 60px;
       `}
       htmlFor="toggle"
     >
       <div
         css={css`
           cursor: pointer;
-          background: ${colors.text};
+          background: #6e40c9;
           border-radius: 50px;
-          height: 26px;
+          height: 22px;
           padding: 3px;
           position: relative;
           transition: ${transitions[2]}s;
-          width: 56px;
+          width: 44px;
 
           &::before {
             content: "";
             border-radius: 30px;
             background: ${colors.background};
             display: block;
-            height: 20px;
+            height: 16px;
             position: absolute;
-            transform: ${isDarkEnabled ? `translate(28px)` : `translate(2px)`};
+            transform: ${isDarkEnabled ? `translate(21px)` : `translate(1px)`};
             transition: transform ${transitions[1]}s,
               background ${transitions[1]}s;
-            width: 20px;
+            width: 16px;
             z-index: 2;
           }
         `}
@@ -70,23 +69,23 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
             align-items: center;
             display: flex;
             height: 100%;
-            margin: 0 5px;
+            margin: 0 2px;
             justify-content: space-between;
           `}
         >
           <SunIcon
             css={css`
-              fill: ${colors.background};
-              height: 18px;
-              width: 18px;
+              fill: ${colors.text};
+              height: 16px;
+              width: 16px;
               z-index: 0;
             `}
           />
           <MoonIcon
             css={css`
               fill: ${colors.background};
-              height: 18px;
-              width: 18px;
+              height: 16px;
+              width: 16px;
               z-index: 0;
             `}
           />

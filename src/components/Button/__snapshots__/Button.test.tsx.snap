@@ -3,7 +3,7 @@
 exports[`<Button /> renders error 1`] = `
 <div>
   <button
-    class="css-x4chy1-Button"
+    class="css-99ntsi-Button"
   >
     Click me
   </button>
@@ -13,7 +13,7 @@ exports[`<Button /> renders error 1`] = `
 exports[`<Button /> renders success 1`] = `
 <div>
   <button
-    class="css-7r05ul-Button"
+    class="css-gurlb7-Button"
   >
     Click me
   </button>
@@ -23,7 +23,7 @@ exports[`<Button /> renders success 1`] = `
 exports[`<Button /> renders warning 1`] = `
 <div>
   <button
-    class="css-1oicnuu-Button"
+    class="css-1k9sylq-Button"
   >
     Click me
   </button>

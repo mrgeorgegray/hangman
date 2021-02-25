@@ -3,7 +3,7 @@
 exports[`<Letter /> highlights correct 1`] = `
 <div>
   <button
-    class="css-18da9ax"
+    class="css-eibtzb"
   >
     a
   </button>
