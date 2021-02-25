@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { css } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 interface LetterProps {
   onClick: (letter: string) => void;
   isCorrect: boolean;
@@ -10,39 +10,48 @@ interface LetterProps {
 }
 
 const Letter = React.memo<LetterProps>(
-  ({ onClick, isCorrect, isDisabled, letter, shouldHighlight }) => (
-    <button
-      disabled={isDisabled}
-      onClick={() => onClick(letter)}
-      css={css`
-        background-color: transparent;
-        border: 1px solid transparent;
-        border-radius: 50%;
-        color: ${shouldHighlight ? (isCorrect ? `green` : `red`) : undefined};
-        display: inline-block;
-        font-size: 22px;
-        height: 30px;
-        margin: 5px;
-        outline: none;
-        padding: 4px 10px 10px 10px;
-        text-align: center;
-        transition: border 200ms ease-out;
-        width: 30px;
-        &:hover:enabled {
-          border: 1px solid #30353b;
-          cursor: pointer;
-        }
+  ({ onClick, isCorrect, isDisabled, letter, shouldHighlight }) => {
+    const { border, breakpoints, colors, fontSize } = useTheme();
 
-        @media (min-width: 500px) {
-          font-size: 34px;
-          height: 50px;
-          width: 50px;
-        }
-      `}
-    >
-      {letter}
-    </button>
-  )
+    return (
+      <button
+        disabled={isDisabled}
+        onClick={() => onClick(letter)}
+        css={css`
+          background-color: transparent;
+          border: ${border.width}px dashed transparent;
+          border-radius: 50%;
+          color: ${shouldHighlight
+            ? isCorrect
+              ? colors.success
+              : colors.error
+            : undefined};
+          display: inline-block;
+          font-size: ${fontSize[2]}px;
+          height: 30px;
+          margin: 5px;
+          outline: none;
+          padding: 2px 10px 10px 10px;
+          text-align: center;
+          transition: border 200ms ease-out;
+          width: 30px;
+
+          &:hover:enabled {
+            border: ${border.width}px dashed ${colors.text};
+            cursor: pointer;
+          }
+
+          @media (min-width: ${breakpoints.md}) {
+            font-size: ${fontSize[3]}px;
+            height: 50px;
+            width: 50px;
+          }
+        `}
+      >
+        {letter}
+      </button>
+    );
+  }
 );
 
 export default Letter;

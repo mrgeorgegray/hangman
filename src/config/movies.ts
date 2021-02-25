@@ -1,32 +1,8 @@
 /* ===============
-LETTERS
-determine what is displayed
-on the keyboard. Make sure
-you include all letters that
-are in your solutions, these
-movies have no numbers or special
-characters
+MOVIES
+all numbers and special chars removed
 =============== */
-// prettier-ignore
-export const LETTERS = [
-  "a", "b", "c", "d", "e", "f", "g", "h", "i",
-  "j", "k", "l", "m", "n", "o", "p", "q", "r",
-  "s", "t", "u", "v", "w", "x", "y", "z",
-];
-
-/* ===============
-STARTING_CHANCES
-how many guesses a user
-has before the Hangman is dead
-=============== */
-export const STARTING_CHANCES = 6;
-
-/* ===============
-SOLUTIONS
-All the possible words,
-picked at random when playing
-=============== */
-export const SOLUTIONS = [
+const movies = [
   "a beautiful mind",
   "a charlie brown christmas",
   "a christmas story",
@@ -276,3 +252,5 @@ export const SOLUTIONS = [
   "you’ve got mail",
   "zoolander",
 ];
+
+export default movies;

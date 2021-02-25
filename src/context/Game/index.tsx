@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useReducer } from "react";
+import { ThemeProvider } from "@emotion/react";
 import { Immutable } from "immer";
 
 import {
@@ -7,6 +8,7 @@ import {
   GameAction,
   GameState,
 } from "./state";
+import { THEMES } from "../../config";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 // ===============
@@ -62,7 +64,7 @@ const GameContext: React.FC = ({ children }) => {
   return (
     <GameDispatchContext.Provider value={dispatch}>
       <GameStateContext.Provider value={state}>
-        {children}
+        <ThemeProvider theme={THEMES.lightTheme}>{children}</ThemeProvider>
       </GameStateContext.Provider>
     </GameDispatchContext.Provider>
   );

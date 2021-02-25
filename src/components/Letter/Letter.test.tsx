@@ -1,7 +1,9 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
+import { ThemeProvider } from "@emotion/react";
 
 import Letter from ".";
+import { THEMES } from "../../config";
 
 describe.only("<Letter />", () => {
   const onClick = jest.fn();
@@ -15,19 +17,29 @@ describe.only("<Letter />", () => {
   };
 
   it("renders", () => {
-    const { container } = render(<Letter {...defaultProps} />);
+    const { container } = render(
+      <ThemeProvider theme={THEMES.lightTheme}>
+        <Letter {...defaultProps} />
+      </ThemeProvider>
+    );
     expect(container).toMatchSnapshot();
   });
 
   it("handles clicks", () => {
-    const { getByText } = render(<Letter {...defaultProps} />);
+    const { getByText } = render(
+      <ThemeProvider theme={THEMES.lightTheme}>
+        <Letter {...defaultProps} />
+      </ThemeProvider>
+    );
     fireEvent.click(getByText(defaultProps.letter));
     expect(onClick).toHaveBeenCalled();
   });
 
   it("is disabled", () => {
     const { getByText } = render(
-      <Letter {...defaultProps} isDisabled={true} />
+      <ThemeProvider theme={THEMES.lightTheme}>
+        <Letter {...defaultProps} isDisabled={true} />
+      </ThemeProvider>
     );
     const btn = getByText(defaultProps.letter);
     fireEvent.click(btn);
@@ -38,14 +50,18 @@ describe.only("<Letter />", () => {
 
   it("highlights correct", () => {
     const { container } = render(
-      <Letter {...defaultProps} shouldHighlight={true} isCorrect={true} />
+      <ThemeProvider theme={THEMES.lightTheme}>
+        <Letter {...defaultProps} shouldHighlight={true} isCorrect={true} />
+      </ThemeProvider>
     );
     expect(container).toMatchSnapshot();
   });
 
   it("highlights incorrect", () => {
     const { container } = render(
-      <Letter {...defaultProps} shouldHighlight={true} />
+      <ThemeProvider theme={THEMES.lightTheme}>
+        <Letter {...defaultProps} shouldHighlight={true} />
+      </ThemeProvider>
     );
     expect(container).toMatchSnapshot();
   });

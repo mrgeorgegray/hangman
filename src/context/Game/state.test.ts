@@ -1,5 +1,5 @@
 import { initialState, curriedGameReducer, GameStatus } from "./state";
-import { STARTING_CHANCES } from "./config";
+import { STARTING_CHANCES } from "./../../config";
 import * as utils from "./utils";
 
 describe("GameState", () => {

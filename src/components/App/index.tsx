@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import React, { Fragment } from "react";
-import { Global, css } from "@emotion/react";
+import { css, Global, useTheme } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 
 import { useGameState } from "../../context/Game";
@@ -10,6 +10,7 @@ import Home from "../../views/Home";
 import Footer from "../Footer";
 
 const App: React.FC = () => {
+  const { breakpoints, colors, fontSize, layout, space } = useTheme();
   const { status } = useGameState();
 
   return (
@@ -23,14 +24,18 @@ const App: React.FC = () => {
           }
           html,
           body {
-            background-color: #f5f5f5;
-            color: #30353b;
+            background-color: ${colors.background};
+            color: ${colors.text};
             font-family: monospace;
-            font-size: 18px;
-            height: 100%;
+            font-size: ${fontSize[1]}px;
             line-height: 1.4;
-            padding: 0 10px;
-            width: 100%;
+            padding: 0 ${space[1]}px;
+          }
+          a {
+            color: ${colors.link};
+            &:hover {
+              color: ${colors.linkHover};
+            }
           }
         `}
       />
@@ -40,10 +45,10 @@ const App: React.FC = () => {
           flex-direction: column;
           margin: 0 auto;
           min-height: 100vh;
-          max-width: 1000px;
+          max-width: ${layout.maxWidth};
 
-          @media (min-width: 720px) {
-            padding-top: 100px;
+          @media (min-width: ${breakpoints.lg}) {
+            padding-top: ${space[5]}px;
           }
         `}
       >

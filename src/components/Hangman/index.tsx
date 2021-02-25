@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { css } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 import { motion } from "framer-motion";
 
 interface HangmanProps {
@@ -8,7 +8,8 @@ interface HangmanProps {
 }
 
 const Hangman = React.memo<HangmanProps>(({ chancesRemaining }) => {
-  const color = "#30353b";
+  const { breakpoints, colors, hangman, transitions } = useTheme();
+  const fillColor = colors.text;
   const showGallows = true;
   const showHead = chancesRemaining <= 5;
   const showBody = chancesRemaining <= 4;
@@ -19,23 +20,36 @@ const Hangman = React.memo<HangmanProps>(({ chancesRemaining }) => {
 
   const initialStyles = {
     fillOpacity: 0,
-    stroke: "rgba(48, 53, 59, 0)",
+    stroke: `rgba(${hangman.stroke}, 0)`,
     strokeDasharray: 400,
     strokeDashoffset: 0,
   };
-  // prettier-ignore
   const gallowAnimation = {
     fillOpacity: [0, 0.1, 1],
-    stroke: ["rgba(48, 53, 59, 0)", "rgba(48, 53, 59, 0.8)", "rgba(48, 53, 59, 0)" ],
+    stroke: [
+      `rgba(${hangman.stroke}, 0)`,
+      `rgba(${hangman.stroke}, 0.8)`,
+      `rgba(${hangman.stroke}, 0)`,
+    ],
     strokeDasharray: [400, 400],
     strokeDashoffset: [0, 400],
+    transition: {
+      duration: transitions[1],
+    },
   };
-  // prettier-ignore
   const svgAnimation = {
     fillOpacity: [0, 1],
-    stroke: ["rgba(48, 53, 59, 0)", "rgba(48, 53, 59, 0.3)", "rgba(48, 53, 59, 0)" ],
+    stroke: [
+      `rgba(${hangman.stroke}, 0)`,
+      `rgba(${hangman.stroke}, 0.3)`,
+      `rgba(${hangman.stroke}, 0)`,
+    ],
     strokeDasharray: [400, 400],
     strokeDashoffset: [0, 400],
+    transition: {
+      type: "tween",
+      duration: transitions[1],
+    },
   };
 
   return (
@@ -44,18 +58,18 @@ const Hangman = React.memo<HangmanProps>(({ chancesRemaining }) => {
         margin: 0 auto;
         max-width: 250px;
 
-        @media (min-width: 500px) {
+        @media (min-width: ${breakpoints.md}) {
           max-width: 380px;
         }
 
-        @media (min-width: 720px) {
+        @media (min-width: ${breakpoints.lg}) {
           max-width: 800px;
         }
       `}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 346 358">
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g transform="translate(-16)" fill={color}>
+          <g transform="translate(-16)" fill={fillColor}>
             <g id="hangman" transform="translate(16)">
               {showRightLeg && (
                 <motion.path

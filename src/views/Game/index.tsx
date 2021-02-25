@@ -1,16 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { css } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 
 import { useGameDispatch, useGameState } from "../../context/Game";
 import { GameStatus } from "../../context/Game/state";
-import Action from "../../components/Action";
 import Banner from "../../components/Banner";
+import Button from "../../components/Button";
 import Hangman from "../../components/Hangman";
 import Letter from "../../components/Letter";
 import Solution from "../../components/Solution";
 
 const GamePage: React.FC = () => {
+  const { breakpoints, fontSize, space } = useTheme();
   const dispatch = useGameDispatch();
   const {
     chancesRemaining,
@@ -69,10 +70,8 @@ const GamePage: React.FC = () => {
   return (
     <div
       css={css`
-        max-width: 1000px;
         text-align: center;
-
-        @media (min-width: 720px) {
+        @media (min-width: ${breakpoints.lg}) {
           text-align: left;
         }
       `}
@@ -82,7 +81,7 @@ const GamePage: React.FC = () => {
           type="error"
           message={`You Lost :-( the answer was "${solution}"`}
           action={
-            <Action type="success" onClick={handleNewGame} text="New Game" />
+            <Button type="success" onClick={handleNewGame} text="New Game" />
           }
         />
       )}
@@ -91,15 +90,15 @@ const GamePage: React.FC = () => {
           type="success"
           message="Congratulations! You Won :-)"
           action={
-            <Action type="success" onClick={handleNewGame} text="New Game" />
+            <Button type="success" onClick={handleNewGame} text="New Game" />
           }
         />
       )}
       <div
         css={css`
-          margin-top: 20px;
+          margin-top: ${space[2]}px;
 
-          @media (min-width: 720px) {
+          @media (min-width: ${breakpoints.lg}) {
             float: left;
             width: 48%;
           }
@@ -109,11 +108,11 @@ const GamePage: React.FC = () => {
       </div>
       <div
         css={css`
-          margin-top: 30px;
+          margin-top: ${space[3]}px;
 
-          @media (min-width: 720px) {
+          @media (min-width: ${breakpoints.lg}) {
             float: right;
-            margin-top: 80px;
+            margin-top: ${space[4]}px;
             width: 48%;
           }
         `}
@@ -121,18 +120,18 @@ const GamePage: React.FC = () => {
         <Solution text={solutionFormatted} />
         <div
           css={css`
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: ${fontSize[0]}px;
+            margin-bottom: ${space[2]}px;
           `}
         >
           <p>(chances remaining: {chancesRemaining})</p>
         </div>
         <div
           css={css`
-            margin-bottom: 30px;
+            margin-bottom: ${space[3]}px;
 
-            @media (min-width: 720px) {
-              margin-left: -20px;
+            @media (min-width: ${breakpoints.lg}) {
+              margin-left: -${space[2] + 2}px;
               max-width: 440px;
             }
           `}
@@ -159,11 +158,17 @@ const GamePage: React.FC = () => {
           {status === GameStatus.Playing && (
             <div
               css={css`
-                margin-bottom: 30px;
+                margin-bottom: ${space[3]}px;
               `}
             >
-              <Action type="warning" onClick={handleGiveup} text="Give up!" />
-              <Action type="error" onClick={handleQuit} text="Quit Game" />
+              <span
+                css={css`
+                  margin-right: ${space[2]}px;
+                `}
+              >
+                <Button type="warning" onClick={handleGiveup} text="Give up!" />
+              </span>
+              <Button type="error" onClick={handleQuit} text="Quit Game" />
             </div>
           )}
         </nav>

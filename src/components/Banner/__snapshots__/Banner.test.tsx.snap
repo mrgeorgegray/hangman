@@ -3,11 +3,18 @@
 exports[`<Banner /> renders a error state 1`] = `
 <div>
   <div
-    class="css-1vttx9d-Banner"
+    class="css-1t13ckc-Banner"
   >
     <span
-      class="css-1w6p0kp-Banner"
-    />
+      class="css-19zhg3v-Banner"
+    >
+      <strong>
+        uh oh
+      </strong>
+    </span>
+    <span>
+      Actions
+    </span>
   </div>
 </div>
 `;
@@ -15,11 +22,18 @@ exports[`<Banner /> renders a error state 1`] = `
 exports[`<Banner /> renders a success state 1`] = `
 <div>
   <div
-    class="css-icnjft-Banner"
+    class="css-1u3yox3-Banner"
   >
     <span
-      class="css-1w6p0kp-Banner"
-    />
+      class="css-19zhg3v-Banner"
+    >
+      <strong>
+        woohoo
+      </strong>
+    </span>
+    <span>
+      Actions
+    </span>
   </div>
 </div>
 `;

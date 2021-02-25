@@ -3,10 +3,10 @@
 exports[`<Home /> renders 1`] = `
 <div>
   <div
-    class="css-1t7c1v1-HomePage"
+    class="css-8db22m-HomePage"
   >
     <h1
-      class="css-tnsnpe-HomePage"
+      class="css-1ecuewh-HomePage"
     >
       Welcome to Hangman!
     </h1>
@@ -16,7 +16,7 @@ exports[`<Home /> renders 1`] = `
       A simple game built with React
     </p>
     <button
-      class="css-1nzsci0-HomePage"
+      class="css-yl7evr-Button"
     >
       Start Game
     </button>

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> renders error 1`] = `
+<div>
+  <button
+    class="css-1qqb7x1-Button"
+  >
+    Click me
+  </button>
+</div>
+`;
+
+exports[`<Button /> renders success 1`] = `
+<div>
+  <button
+    class="css-cxjhyp-Button"
+  >
+    Click me
+  </button>
+</div>
+`;
+
+exports[`<Button /> renders warning 1`] = `
+<div>
+  <button
+    class="css-g4a5sv-Button"
+  >
+    Click me
+  </button>
+</div>
+`;

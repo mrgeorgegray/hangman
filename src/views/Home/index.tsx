@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { css } from "@emotion/react";
+import { css, useTheme } from "@emotion/react";
 
 import { useGameDispatch } from "../../context/Game";
+import Button from "../../components/Button";
 
 const HomePage: React.FC = () => {
+  const { breakpoints, fontSize, space } = useTheme();
   const dispatch = useGameDispatch();
 
   const handleStart = () => {
@@ -14,17 +16,17 @@ const HomePage: React.FC = () => {
   return (
     <div
       css={css`
-        padding-top: 30px;
+        padding-top: ${space[3]}px;
         text-align: center;
 
-        @media (min-width: 720px) {
+        @media (min-width: ${breakpoints.lg}) {
           padding-top: 0;
         }
       `}
     >
       <h1
         css={css`
-          font-size: 48px;
+          font-size: ${fontSize[4]}px;
           line-height: 1;
         `}
       >
@@ -32,30 +34,17 @@ const HomePage: React.FC = () => {
       </h1>
       <p
         css={css`
-          margin-bottom: 32px;
+          margin-bottom: ${space[3]}px;
         `}
       >
         A simple game built with React
       </p>
-      <button
-        css={css`
-          background-color: transparent;
-          border: 1px solid #747474;
-          border-radius: 3px;
-          font-size: 20px;
-          padding: 12px 18px;
-          transition: all 150ms ease-in;
-
-          &:hover {
-            background-color: #6cc070;
-            border-color: #6cc070;
-            cursor: pointer;
-          }
-        `}
+      <Button
+        size="large"
+        type="success"
+        text="Start Game"
         onClick={handleStart}
-      >
-        Start Game
-      </button>
+      />
     </div>
   );
 };

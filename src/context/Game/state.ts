@@ -1,6 +1,6 @@
 import produce, { Draft } from "immer";
 
-import { LETTERS, STARTING_CHANCES, SOLUTIONS } from "./config";
+import { LETTERS, STARTING_CHANCES, SOLUTIONS } from "../../config";
 import * as utils from "./utils";
 
 export enum GameStatus {
@@ -38,7 +38,7 @@ export const initialState: GameState = {
 const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
   switch (action.type) {
     case "start": {
-      const solution = utils.sample(SOLUTIONS);
+      const solution = utils.sample(SOLUTIONS.movies);
       draft.chancesRemaining = STARTING_CHANCES;
       draft.guesses = [];
       draft.solution = solution;
