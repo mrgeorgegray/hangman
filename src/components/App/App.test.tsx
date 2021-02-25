@@ -19,5 +19,6 @@ describe("<App />", () => {
     expect(container).toMatchSnapshot();
   });
 
+  it.todo("handles a theme change");
   it.todo("renders game");
 });

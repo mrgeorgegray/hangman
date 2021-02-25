@@ -1,6 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Solution /> renders 1`] = `
+exports[`<Solution /> renders as lost 1`] = `
+<div>
+  <div
+    class="css-1ue5813-Solution"
+  >
+    solution
+  </div>
+</div>
+`;
+
+exports[`<Solution /> renders as won 1`] = `
+<div>
+  <div
+    class="css-bhtsw6-Solution"
+  >
+    solution
+  </div>
+</div>
+`;
+
+exports[`<Solution /> renders inPlay 1`] = `
 <div>
   <div
     class="css-1am8y5a-Solution"
