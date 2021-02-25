@@ -23,7 +23,7 @@ exports[`<Button /> renders success 1`] = `
 exports[`<Button /> renders warning 1`] = `
 <div>
   <button
-    class="css-1k9sylq-Button"
+    class="css-1ekpo6r-Button"
   >
     Click me
   </button>

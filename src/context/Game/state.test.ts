@@ -133,6 +133,7 @@ describe("GameState", () => {
         ...playingState,
         chancesRemaining: 0,
         guesses: [letter],
+        solutionFormatted: solution,
         status: GameStatus.Lost,
       });
     });

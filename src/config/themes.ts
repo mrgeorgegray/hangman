@@ -19,7 +19,7 @@ const baseTheme: Theme = {
     softSuccess: "#9BE9A8",
     success: "#27D545",
     text: "#30353B",
-    warning: "#F0883D",
+    warning: "#FF7903",
   },
   fontSize: [14, 18, 22, 34, 50],
   hangman: {
@@ -30,7 +30,7 @@ const baseTheme: Theme = {
     maxWidth: "1000px",
   },
   space: [4, 8, 16, 32, 64, 96, 128],
-  transitions: [0.15, 0.2],
+  transitions: [0.15, 0.2, 0.5],
 };
 
 export const lightTheme: Theme = {
@@ -44,15 +44,13 @@ export const darkTheme: Theme = {
     color: "transparent",
   },
   colors: {
+    ...baseTheme.colors,
     background: "#0D1117",
-    error: "#FF0033",
     link: "#58A6FF",
     linkHover: "#ABE0FF",
     softError: "#DA3733",
     softSuccess: "#02602C",
-    success: "#27D545",
     text: "#F5F5F5",
-    warning: "#F0883D",
   },
   hangman: {
     fill: "#ADADAD",

@@ -48,7 +48,7 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
       for="toggle"
     >
       <div
-        class="css-1u26quh-ThemeSwitch"
+        class="css-p1vdra-ThemeSwitch"
       >
         <span
           class="css-19pqaj4-ThemeSwitch"

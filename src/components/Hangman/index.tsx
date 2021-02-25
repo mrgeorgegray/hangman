@@ -29,12 +29,12 @@ const Hangman = React.memo<HangmanProps>(({ chancesRemaining }) => {
     stroke: [
       `rgba(${hangman.stroke}, 0)`,
       `rgba(${hangman.stroke}, 0.8)`,
-      `rgba(${hangman.stroke}, 0)`,
+      `rgba(${hangman.stroke}, 0.1)`,
     ],
     strokeDasharray: [400, 400],
     strokeDashoffset: [0, 400],
     transition: {
-      duration: transitions[1],
+      duration: transitions[2],
     },
   };
   const svgAnimation = {

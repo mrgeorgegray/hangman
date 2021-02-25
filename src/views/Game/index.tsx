@@ -79,7 +79,7 @@ const GamePage: React.FC = () => {
       {status === GameStatus.Lost && (
         <Banner
           type="error"
-          message={`You Lost :-( the answer was "${solution}"`}
+          message="Game over :-( "
           action={
             <Button type="plain" onClick={handleNewGame} text="New Game" />
           }
@@ -117,7 +117,7 @@ const GamePage: React.FC = () => {
           }
         `}
       >
-        <Solution text={solutionFormatted} />
+        <Solution text={solutionFormatted} status={status} />
         <div
           css={css`
             font-size: ${fontSize[0]}px;

@@ -88,6 +88,7 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
         draft.status = GameStatus.Won;
       }
       if (draft.chancesRemaining === 0) {
+        draft.solutionFormatted = draft.solution;
         draft.status = GameStatus.Lost;
       }
       return;
