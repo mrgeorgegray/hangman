@@ -13,8 +13,10 @@ const baseTheme: Theme = {
   colors: {
     background: "#F5F5F5",
     error: "#FF0033",
+    grey: "#949DA5",
     link: "#0366D6",
     linkHover: "#0387D6",
+    purple: "#6E40C9",
     softError: "#FFBABA",
     softSuccess: "#9BE9A8",
     success: "#27D545",

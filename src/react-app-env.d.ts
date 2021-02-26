@@ -17,8 +17,10 @@ declare module "@emotion/react" {
     colors: {
       background: string;
       error: string;
+      grey: string;
       link: string;
       linkHover: string;
+      purple: string;
       softError: string;
       softSuccess: string;
       success: string;

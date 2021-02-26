@@ -8,7 +8,7 @@ exports[`<Home /> renders 1`] = `
     <h1
       class="css-1ecuewh-HomePage"
     >
-      Welcome to Hangman!
+      Hangman
     </h1>
     <p
       class="css-11dnfsa-HomePage"

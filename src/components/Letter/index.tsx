@@ -37,7 +37,7 @@ const Letter = React.memo<LetterProps>(
           width: 30px;
 
           &:hover:enabled {
-            border: ${border.width}px dashed ${colors.text};
+            border: ${border.width}px dashed ${colors.grey};
             cursor: pointer;
           }
 

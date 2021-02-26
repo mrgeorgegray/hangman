@@ -3,7 +3,7 @@
 exports[`<Letter /> highlights correct 1`] = `
 <div>
   <button
-    class="css-eibtzb"
+    class="css-1ffgwec"
   >
     a
   </button>
@@ -13,7 +13,7 @@ exports[`<Letter /> highlights correct 1`] = `
 exports[`<Letter /> highlights incorrect 1`] = `
 <div>
   <button
-    class="css-1g2v0e2"
+    class="css-17umwbj"
   >
     a
   </button>
@@ -23,7 +23,7 @@ exports[`<Letter /> highlights incorrect 1`] = `
 exports[`<Letter /> renders 1`] = `
 <div>
   <button
-    class="css-l4kfvz"
+    class="css-wthyh2"
   >
     a
   </button>

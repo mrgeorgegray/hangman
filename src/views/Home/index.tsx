@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
           line-height: 1;
         `}
       >
-        Welcome to Hangman!
+        Hangman
       </h1>
       <p
         css={css`

@@ -14,7 +14,7 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
         <h1
           class="css-1ecuewh-HomePage"
         >
-          Welcome to Hangman!
+          Hangman
         </h1>
         <p
           class="css-11dnfsa-HomePage"
@@ -48,7 +48,7 @@ exports[`<App /> renders home page when 'notStarted'  1`] = `
       for="toggle"
     >
       <div
-        class="css-p1vdra-ThemeSwitch"
+        class="css-1wjuz8a-ThemeSwitch"
       >
         <span
           class="css-19pqaj4-ThemeSwitch"

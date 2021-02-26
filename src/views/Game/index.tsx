@@ -11,7 +11,7 @@ import Letter from "../../components/Letter";
 import Solution from "../../components/Solution";
 
 const GamePage: React.FC = () => {
-  const { breakpoints, fontSize, space } = useTheme();
+  const { breakpoints, colors, fontSize, space } = useTheme();
   const dispatch = useGameDispatch();
   const {
     chancesRemaining,
@@ -124,7 +124,13 @@ const GamePage: React.FC = () => {
             margin-bottom: ${space[2]}px;
           `}
         >
-          <p>(chances remaining: {chancesRemaining})</p>
+          <p
+            css={css`
+              color: ${colors.grey};
+            `}
+          >
+            (chances remaining: {chancesRemaining})
+          </p>
         </div>
         <div
           css={css`

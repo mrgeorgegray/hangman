@@ -28,10 +28,10 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
       <div
         css={css`
           cursor: pointer;
-          background: #6e40c9;
+          background: ${isDarkEnabled ? colors.purple : colors.grey};
           border-radius: 50px;
           height: 22px;
-          padding: 3px;
+          padding: 3px 2px;
           position: relative;
           transition: ${transitions[2]}s;
           width: 44px;
@@ -43,7 +43,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
             display: block;
             height: 16px;
             position: absolute;
-            transform: ${isDarkEnabled ? `translate(21px)` : `translate(1px)`};
+            transform: ${isDarkEnabled ? `translate(23px)` : `translate(1px)`};
             transition: transform ${transitions[1]}s,
               background ${transitions[1]}s;
             width: 16px;
