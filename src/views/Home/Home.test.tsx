@@ -10,8 +10,8 @@ import { THEMES } from "../../config";
 describe("<Home />", () => {
   const mockDispatch: React.Dispatch<GameAction> = jest.fn();
 
-  it("renders", () => {
-    const { container } = render(
+  const buildSubject = () =>
+    render(
       <GameDispatchContext.Provider value={mockDispatch}>
         <GameStateContext.Provider value={initialState}>
           <ThemeProvider theme={THEMES.light}>
@@ -20,19 +20,15 @@ describe("<Home />", () => {
         </GameStateContext.Provider>
       </GameDispatchContext.Provider>
     );
+
+  it("renders", () => {
+    const { container } = buildSubject();
+
     expect(container).toMatchSnapshot();
   });
 
   it("starts a game", () => {
-    const { getByText } = render(
-      <GameDispatchContext.Provider value={mockDispatch}>
-        <GameStateContext.Provider value={initialState}>
-          <ThemeProvider theme={THEMES.light}>
-            <Home />
-          </ThemeProvider>
-        </GameStateContext.Provider>
-      </GameDispatchContext.Provider>
-    );
+    const { getByText } = buildSubject();
 
     fireEvent.click(getByText("Start Game"));
 
