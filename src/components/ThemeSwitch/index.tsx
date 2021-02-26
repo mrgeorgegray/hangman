@@ -23,8 +23,22 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
         display: block;
         margin: 0 auto ${space[2]}px;
       `}
-      htmlFor="toggle"
+      data-testid="toggleTheme"
+      htmlFor="themeToggle"
     >
+      <span
+        css={css`
+          clip: rect(0 0 0 0);
+          clip-path: inset(50%);
+          height: 1px;
+          overflow: hidden;
+          position: absolute;
+          white-space: nowrap;
+          width: 1px;
+        `}
+      >
+        {isDarkEnabled ? "Enable Light Mode" : "Enable Dark Mode"}
+      </span>
       <div
         css={css`
           cursor: pointer;
@@ -51,19 +65,6 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
           }
         `}
       >
-        <span
-          css={css`
-            clip: rect(0 0 0 0);
-            clip-path: inset(50%);
-            height: 1px;
-            overflow: hidden;
-            position: absolute;
-            white-space: nowrap;
-            width: 1px;
-          `}
-        >
-          {isDarkEnabled ? "Enable Light Mode" : "Enable Dark Mode"}
-        </span>
         <div
           css={css`
             align-items: center;
@@ -91,8 +92,8 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
           />
         </div>
         <input
-          id="toggle"
-          name="toggle"
+          id="themeToggle"
+          name="themeToggle"
           type="checkbox"
           checked={isDarkEnabled}
           onChange={handleChange}

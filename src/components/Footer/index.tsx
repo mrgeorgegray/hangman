@@ -6,6 +6,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer
+      role="contentinfo"
       css={css`
         flex-shrink: 0;
         font-size: ${fontSize[0]}px;

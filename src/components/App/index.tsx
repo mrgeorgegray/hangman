@@ -63,6 +63,7 @@ const App: React.FC = () => {
         `}
       >
         <main
+          role="main"
           css={css`
             flex-grow: 1;
           `}

@@ -125,6 +125,8 @@ const GamePage: React.FC = () => {
           `}
         >
           <p
+            aria-live="polite"
+            id="chancesRemaining"
             css={css`
               color: ${colors.grey};
             `}
@@ -150,6 +152,7 @@ const GamePage: React.FC = () => {
 
             return (
               <Letter
+                aria-controls="chancesRemaining"
                 key={letter}
                 onClick={handleGuess}
                 letter={letter}

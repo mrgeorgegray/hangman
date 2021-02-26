@@ -4,6 +4,7 @@ exports[`<Footer /> renders 1`] = `
 <div>
   <footer
     class="css-288auf-Footer"
+    role="contentinfo"
   >
     <hr />
     <p>

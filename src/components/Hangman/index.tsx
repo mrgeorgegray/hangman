@@ -50,7 +50,14 @@ const Hangman = React.memo<HangmanProps>(({ chancesRemaining }) => {
         }
       `}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 346 358">
+      <svg
+        role="img"
+        aria-hidden="true"
+        focusable="false"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 346 358"
+      >
+        <title>Hangman Graphic</title>
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
           <g transform="translate(-16)" fill={fillColor}>
             <g id="hangman" transform="translate(16)">
