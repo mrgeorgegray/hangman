@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import { css, useTheme } from "@emotion/react";
-interface LetterProps {
+export interface LetterProps {
   onClick: (letter: string) => void;
   isCorrect: boolean;
   isDisabled: boolean;

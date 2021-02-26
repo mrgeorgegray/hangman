@@ -3,7 +3,7 @@ import React from "react";
 import { css, useTheme } from "@emotion/react";
 
 import { GameStatus } from "../../context/Game/state";
-interface SolutionProps {
+export interface SolutionProps {
   status: GameStatus;
   text: string;
 }

@@ -1,29 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Solution /> renders as lost 1`] = `
-<div>
-  <div
-    class="css-1ue5813-Solution"
-  >
-    solution
-  </div>
-</div>
-`;
-
-exports[`<Solution /> renders as won 1`] = `
-<div>
-  <div
-    class="css-bhtsw6-Solution"
-  >
-    solution
-  </div>
-</div>
-`;
-
 exports[`<Solution /> renders inPlay 1`] = `
+.emotion-0 {
+  color: #30353B;
+  font-size: 34px;
+  letter-spacing: 4px;
+  line-height: 1.2;
+  margin-bottom: 32;
+}
+
+@media (min-width: 500px) {
+  .emotion-0 {
+    font-size: 50px;
+  }
+}
+
 <div>
   <div
-    class="css-1am8y5a-Solution"
+    class="emotion-0"
   >
     s_lution
   </div>

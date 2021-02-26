@@ -12,6 +12,7 @@ describe("<Footer />", () => {
         <Footer />
       </ThemeProvider>
     );
+
     expect(container).toMatchSnapshot();
   });
 });

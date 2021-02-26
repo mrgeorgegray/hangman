@@ -2,46 +2,49 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { ThemeProvider } from "@emotion/react";
 
-import Letter from ".";
+import Letter, { LetterProps } from ".";
 import { THEMES } from "../../config";
 
 describe.only("<Letter />", () => {
-  const onClick = jest.fn();
-
-  const defaultProps = {
-    onClick,
+  const defaultProps: LetterProps = {
+    onClick: () => {},
     letter: "a",
     isDisabled: false,
     isCorrect: false,
     shouldHighlight: false,
   };
 
-  it("renders", () => {
-    const { container } = render(
+  const buildSubject = (props = defaultProps) =>
+    render(
       <ThemeProvider theme={THEMES.light}>
-        <Letter {...defaultProps} />
+        <Letter {...props} />
       </ThemeProvider>
     );
+
+  it("renders", () => {
+    const { container } = buildSubject();
+
     expect(container).toMatchSnapshot();
   });
 
   it("handles clicks", () => {
-    const { getByText } = render(
-      <ThemeProvider theme={THEMES.light}>
-        <Letter {...defaultProps} />
-      </ThemeProvider>
-    );
+    const onClick = jest.fn();
+    const { getByText } = buildSubject({ ...defaultProps, onClick });
+
     fireEvent.click(getByText(defaultProps.letter));
+
     expect(onClick).toHaveBeenCalled();
   });
 
   it("is disabled", () => {
-    const { getByText } = render(
-      <ThemeProvider theme={THEMES.light}>
-        <Letter {...defaultProps} isDisabled={true} />
-      </ThemeProvider>
-    );
+    const onClick = jest.fn();
+    const { getByText } = buildSubject({
+      ...defaultProps,
+      onClick,
+      isDisabled: true,
+    });
     const btn = getByText(defaultProps.letter);
+
     fireEvent.click(btn);
 
     expect(onClick).not.toHaveBeenCalled();
@@ -49,20 +52,28 @@ describe.only("<Letter />", () => {
   });
 
   it("highlights correct", () => {
-    const { container } = render(
-      <ThemeProvider theme={THEMES.light}>
-        <Letter {...defaultProps} shouldHighlight={true} isCorrect={true} />
-      </ThemeProvider>
+    const { getByText } = buildSubject({
+      ...defaultProps,
+      shouldHighlight: true,
+      isCorrect: true,
+    });
+
+    expect(getByText(defaultProps.letter)).toHaveStyleRule(
+      "color",
+      THEMES.light.colors.success
     );
-    expect(container).toMatchSnapshot();
   });
 
   it("highlights incorrect", () => {
-    const { container } = render(
-      <ThemeProvider theme={THEMES.light}>
-        <Letter {...defaultProps} shouldHighlight={true} />
-      </ThemeProvider>
+    const { getByText } = buildSubject({
+      ...defaultProps,
+      shouldHighlight: true,
+      isCorrect: false,
+    });
+
+    expect(getByText(defaultProps.letter)).toHaveStyleRule(
+      "color",
+      THEMES.light.colors.error
     );
-    expect(container).toMatchSnapshot();
   });
 });

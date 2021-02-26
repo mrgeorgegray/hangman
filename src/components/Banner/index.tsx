@@ -2,7 +2,7 @@
 import React from "react";
 import { css, useTheme } from "@emotion/react";
 
-interface BannerProps {
+export interface BannerProps {
   action: JSX.Element;
   message: string;
   type: "error" | "success";
@@ -13,6 +13,7 @@ const Banner: React.FC<BannerProps> = ({ action, message, type }) => {
 
   return (
     <div
+      role="alert"
       css={css`
         border: ${border.width}px solid ${border.color};
         border-radius: ${border.radius}px;

@@ -2,7 +2,7 @@
 import React from "react";
 import { css, useTheme } from "@emotion/react";
 
-interface ButtonProps {
+export interface ButtonProps {
   onClick: () => void;
   size?: "large";
   text: string;
@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, size, text, type }) => {
         color: ${colors.text};
         font-size: ${size === "large" ? fontSize[2] : fontSize[1]}px;
         outline: none;
-        padding: ${size === "large" ? ` 16px 24px` : `12px 18px`};
+        padding: ${size === "large" ? `16px 24px` : `12px 18px`};
         transition: all ${transitions[0]}s ease-in;
 
         &:hover {

@@ -1,29 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> renders error 1`] = `
-<div>
-  <button
-    class="css-99ntsi-Button"
-  >
-    Click me
-  </button>
-</div>
-`;
+exports[`<Button /> renders plain 1`] = `
+.emotion-0 {
+  background-color: #F5F5F5;
+  border: 2px solid #30353B;
+  border-radius: 3px;
+  color: #30353B;
+  font-size: 18px;
+  outline: none;
+  padding: 12px 18px;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
 
-exports[`<Button /> renders success 1`] = `
-<div>
-  <button
-    class="css-gurlb7-Button"
-  >
-    Click me
-  </button>
-</div>
-`;
+.emotion-0:hover {
+  color: #F5F5F5;
+  cursor: pointer;
+  background-color: #30353B;
+  border-color: #30353B;
+}
 
-exports[`<Button /> renders warning 1`] = `
 <div>
   <button
-    class="css-1ekpo6r-Button"
+    class="emotion-0"
   >
     Click me
   </button>

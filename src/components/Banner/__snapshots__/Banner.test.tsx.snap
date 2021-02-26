@@ -1,34 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Banner /> renders a error state 1`] = `
+exports[`<Banner /> renders a banner 1`] = `
+.emotion-0 {
+  border: 2px solid #30353B;
+  border-radius: 3px;
+  padding: 16px;
+  margin-top: 16px;
+  max-width: 1000px;
+  text-align: center;
+  background-color: #FFBABA;
+}
+
+@media (min-width: 720px) {
+  .emotion-0 {
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 90%;
+  }
+}
+
+.emotion-1 {
+  display: block;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 720px) {
+  .emotion-1 {
+    display: inline;
+    margin-right: 16px;
+    margin-bottom: 0;
+  }
+}
+
 <div>
   <div
-    class="css-5sndt9-Banner"
+    class="emotion-0"
+    role="alert"
   >
     <span
-      class="css-19zhg3v-Banner"
+      class="emotion-1"
     >
       <strong>
         uh oh
-      </strong>
-    </span>
-    <span>
-      Actions
-    </span>
-  </div>
-</div>
-`;
-
-exports[`<Banner /> renders a success state 1`] = `
-<div>
-  <div
-    class="css-1gds19t-Banner"
-  >
-    <span
-      class="css-19zhg3v-Banner"
-    >
-      <strong>
-        woohoo
       </strong>
     </span>
     <span>
