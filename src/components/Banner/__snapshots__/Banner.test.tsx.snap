@@ -5,7 +5,7 @@ exports[`<Banner /> renders a banner 1`] = `
   border: 2px solid #30353B;
   border-radius: 3px;
   padding: 16px;
-  margin-top: 16px;
+  margin: 8px 8px 0;
   max-width: 1000px;
   text-align: center;
   background-color: #FFBABA;

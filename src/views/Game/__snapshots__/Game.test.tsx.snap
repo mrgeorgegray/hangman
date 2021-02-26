@@ -34,7 +34,7 @@ exports[`<Game /> renders in play 1`] = `
 
 .emotion-2 {
   margin: 0 auto;
-  max-width: 250px;
+  max-width: 200px;
 }
 
 @media (min-width: 500px) {
@@ -66,7 +66,7 @@ exports[`<Game /> renders in play 1`] = `
 }
 
 .emotion-4 {
-  margin-top: 32px;
+  margin-top: 16px;
 }
 
 @media (min-width: 720px) {
@@ -118,14 +118,14 @@ exports[`<Game /> renders in play 1`] = `
   color: #30353B;
   display: inline-block;
   font-size: 22px;
-  height: 30px;
-  margin: 5px;
+  height: 36px;
+  margin: 4px;
   outline: none;
   padding: 2px 10px 10px 10px;
   text-align: center;
   -webkit-transition: border 200ms ease-out;
   transition: border 200ms ease-out;
-  width: 30px;
+  width: 36px;
 }
 
 .emotion-9:hover:enabled {

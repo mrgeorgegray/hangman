@@ -18,7 +18,7 @@ const Banner: React.FC<BannerProps> = ({ action, message, type }) => {
         border: ${border.width}px solid ${border.color};
         border-radius: ${border.radius}px;
         padding: ${space[2]}px;
-        margin-top: ${space[2]}px;
+        margin: ${space[1]}px ${space[1]}px 0;
         max-width: ${layout.maxWidth};
         text-align: center;
         ${type === "error" && ` background-color: ${colors.softError}; `}

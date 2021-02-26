@@ -28,13 +28,13 @@ const Letter = React.memo<LetterProps>(
             : colors.text};
           display: inline-block;
           font-size: ${fontSize[2]}px;
-          height: 30px;
-          margin: 5px;
+          height: 36px;
+          margin: 4px;
           outline: none;
           padding: 2px 10px 10px 10px;
           text-align: center;
           transition: border 200ms ease-out;
-          width: 30px;
+          width: 36px;
 
           &:hover:enabled {
             border: ${border.width}px dashed ${colors.grey};

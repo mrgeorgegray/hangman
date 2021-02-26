@@ -108,7 +108,7 @@ const GamePage: React.FC = () => {
       </div>
       <div
         css={css`
-          margin-top: ${space[3]}px;
+          margin-top: ${space[2]}px;
 
           @media (min-width: ${breakpoints.lg}) {
             float: right;

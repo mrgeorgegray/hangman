@@ -39,7 +39,6 @@ const App: React.FC = () => {
             font-family: monospace;
             font-size: ${fontSize[1]}px;
             line-height: 1.4;
-            padding: 0 ${space[1]}px;
           }
           a {
             color: ${colors.link};

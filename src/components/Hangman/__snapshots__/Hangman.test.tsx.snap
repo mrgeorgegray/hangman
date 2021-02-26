@@ -13,7 +13,7 @@ exports[`<Hangman /> renders gallows 1`] = `
 
 .emotion-0 {
   margin: 0 auto;
-  max-width: 250px;
+  max-width: 200px;
 }
 
 @media (min-width: 500px) {

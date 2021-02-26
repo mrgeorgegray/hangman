@@ -39,7 +39,7 @@ const Hangman = React.memo<HangmanProps>(({ chancesRemaining }) => {
     <div
       css={css`
         margin: 0 auto;
-        max-width: 250px;
+        max-width: 200px;
 
         @media (min-width: ${breakpoints.md}) {
           max-width: 380px;
