@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.js": "/hangman/static/js/main.ec93ad01.chunk.js",
-    "main.js.map": "/hangman/static/js/main.ec93ad01.chunk.js.map",
+    "main.js": "/hangman/static/js/main.d1f219fd.chunk.js",
+    "main.js.map": "/hangman/static/js/main.d1f219fd.chunk.js.map",
     "runtime-main.js": "/hangman/static/js/runtime-main.e6d35d08.js",
     "runtime-main.js.map": "/hangman/static/js/runtime-main.e6d35d08.js.map",
-    "static/js/2.843d0c29.chunk.js": "/hangman/static/js/2.843d0c29.chunk.js",
-    "static/js/2.843d0c29.chunk.js.map": "/hangman/static/js/2.843d0c29.chunk.js.map",
+    "static/js/2.2bc28f5d.chunk.js": "/hangman/static/js/2.2bc28f5d.chunk.js",
+    "static/js/2.2bc28f5d.chunk.js.map": "/hangman/static/js/2.2bc28f5d.chunk.js.map",
     "index.html": "/hangman/index.html",
-    "static/js/2.843d0c29.chunk.js.LICENSE.txt": "/hangman/static/js/2.843d0c29.chunk.js.LICENSE.txt"
+    "static/js/2.2bc28f5d.chunk.js.LICENSE.txt": "/hangman/static/js/2.2bc28f5d.chunk.js.LICENSE.txt",
+    "static/media/moon.69f2ee1f.svg": "/hangman/static/media/moon.69f2ee1f.svg",
+    "static/media/sun.d7fa4493.svg": "/hangman/static/media/sun.d7fa4493.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.e6d35d08.js",
-    "static/js/2.843d0c29.chunk.js",
-    "static/js/main.ec93ad01.chunk.js"
+    "static/js/2.2bc28f5d.chunk.js",
+    "static/js/main.d1f219fd.chunk.js"
   ]
 }
