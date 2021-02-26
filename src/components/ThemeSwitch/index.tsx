@@ -5,7 +5,7 @@ import { Theme } from "../../context/Game/state";
 import { ReactComponent as MoonIcon } from "./moon.svg";
 import { ReactComponent as SunIcon } from "./sun.svg";
 
-interface ThemeSwitchProps {
+export interface ThemeSwitchProps {
   currentTheme: Theme;
   handleChange: () => void;
 }
@@ -95,6 +95,7 @@ const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
           id="themeToggle"
           name="themeToggle"
           type="checkbox"
+          data-testid="toggleThemeCheckbox"
           checked={isDarkEnabled}
           onChange={handleChange}
           css={css`
