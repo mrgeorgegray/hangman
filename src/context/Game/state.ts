@@ -43,7 +43,7 @@ export const initialState: GameState = {
 const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
   switch (action.type) {
     case "start": {
-      const solution = utils.sample(SOLUTIONS.movies);
+      const solution = utils.sample(SOLUTIONS.words);
       draft.chancesRemaining = STARTING_CHANCES;
       draft.guesses = [];
       draft.solution = solution;

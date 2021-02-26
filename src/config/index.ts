@@ -1,4 +1,6 @@
 import movies from "./movies";
+import sport from "./sport";
+import words from "./words";
 import { darkTheme, lightTheme } from "./themes";
 
 /* ===============
@@ -29,6 +31,8 @@ SOLUTIONS
 =============== */
 export const SOLUTIONS = {
   movies,
+  sport,
+  words,
 };
 
 /* ===============
