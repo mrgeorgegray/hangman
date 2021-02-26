@@ -1,6 +1,15 @@
 import React, { createContext, useContext, useReducer } from "react";
+import { ThemeProvider } from "@emotion/react";
+import { Immutable } from "immer";
 
-import { initialState, curriedGameReducer, GameAction } from "./state";
+import {
+  initialState,
+  curriedGameReducer,
+  GameAction,
+  GameState,
+} from "./state";
+import { THEMES } from "../../config";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 // ===============
 // Setup
@@ -42,12 +51,26 @@ export function useGameState() {
 // Context
 // ===============
 const GameContext: React.FC = ({ children }) => {
-  const [state, dispatch] = useReducer(curriedGameReducer, initialState);
+  const [gameState, setGameState] = useLocalStorage<Immutable<GameState>>(
+    "gameState",
+    initialState
+  );
+  const [state, dispatch] = useReducer(curriedGameReducer, gameState);
+
+  React.useEffect(() => {
+    setGameState(state);
+  }, [state, setGameState]);
+
+  let theme = THEMES.light;
+
+  if (state.theme === "dark") {
+    theme = THEMES.dark;
+  }
 
   return (
     <GameDispatchContext.Provider value={dispatch}>
       <GameStateContext.Provider value={state}>
-        {children}
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </GameStateContext.Provider>
     </GameDispatchContext.Provider>
   );

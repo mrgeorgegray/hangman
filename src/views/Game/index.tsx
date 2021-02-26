@@ -1,22 +1,25 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
+import { css, useTheme } from "@emotion/react";
 
 import { useGameDispatch, useGameState } from "../../context/Game";
 import { GameStatus } from "../../context/Game/state";
-import Action from "../../components/Action";
 import Banner from "../../components/Banner";
-import Graphic from "../../components/Graphic";
+import Button from "../../components/Button";
+import Hangman from "../../components/Hangman";
 import Letter from "../../components/Letter";
 import Solution from "../../components/Solution";
 
 const GamePage: React.FC = () => {
+  const { breakpoints, colors, fontSize, space } = useTheme();
   const dispatch = useGameDispatch();
   const {
     chancesRemaining,
-    status,
+    guesses,
     letters,
     solution,
     solutionFormatted,
-    guesses,
+    status,
   } = useGameState();
 
   const handleGuess = React.useCallback(
@@ -65,45 +68,119 @@ const GamePage: React.FC = () => {
   }, [status, handleKeyup]);
 
   return (
-    <div>
-      <nav>
-        <Action onClick={handleNewGame} text="New Game" />
-        <Action onClick={handleGiveup} text="Give up!" />
-        <Action onClick={handleQuit} text="Quit Game" />
-      </nav>
-      <hr />
+    <div
+      css={css`
+        text-align: center;
+        @media (min-width: ${breakpoints.lg}) {
+          text-align: left;
+        }
+      `}
+    >
       {status === GameStatus.Lost && (
         <Banner
           type="error"
-          text={`You Lost :-( — the answer was "${solution.toUpperCase()}"`}
+          message="Game over :-( "
+          action={
+            <Button type="plain" onClick={handleNewGame} text="New Game" />
+          }
         />
       )}
       {status === GameStatus.Won && (
         <Banner
           type="success"
-          text={`Congratulations! You Won :-) with ${chancesRemaining} chances left`}
+          message="Congratulations! You Won :-)"
+          action={
+            <Button type="plain" onClick={handleNewGame} text="New Game" />
+          }
         />
       )}
-      <Graphic chancesRemaining={chancesRemaining} />
-      <Solution text={solutionFormatted} />
-      <div style={{ maxWidth: 240 }}>
-        {letters.flatMap((letter) => {
-          const isUsed = guesses.includes(letter);
-          const isDisabled = status !== GameStatus.Playing || isUsed;
-          const isCorrect = solution?.includes(letter);
-          const shouldHighlight = isUsed && isDisabled;
+      <div
+        css={css`
+          margin-top: ${space[2]}px;
 
-          return (
-            <Letter
-              key={letter}
-              onClick={handleGuess}
-              letter={letter}
-              isDisabled={isDisabled}
-              isCorrect={isCorrect}
-              shouldHighlight={shouldHighlight}
-            />
-          );
-        })}
+          @media (min-width: ${breakpoints.lg}) {
+            float: left;
+            width: 48%;
+          }
+        `}
+      >
+        <Hangman chancesRemaining={chancesRemaining} />
+      </div>
+      <div
+        css={css`
+          margin-top: ${space[3]}px;
+
+          @media (min-width: ${breakpoints.lg}) {
+            float: right;
+            margin-top: ${space[4]}px;
+            width: 48%;
+          }
+        `}
+      >
+        <Solution text={solutionFormatted} status={status} />
+        <div
+          css={css`
+            font-size: ${fontSize[0]}px;
+            margin-bottom: ${space[2]}px;
+          `}
+        >
+          <p
+            aria-live="polite"
+            id="chancesRemaining"
+            css={css`
+              color: ${colors.grey};
+            `}
+          >
+            (chances remaining: {chancesRemaining})
+          </p>
+        </div>
+        <div
+          css={css`
+            margin-bottom: ${space[3]}px;
+
+            @media (min-width: ${breakpoints.lg}) {
+              margin-left: -${space[2] + 2}px;
+              max-width: 440px;
+            }
+          `}
+        >
+          {letters.flatMap((letter) => {
+            const isUsed = guesses.includes(letter);
+            const isDisabled = status !== GameStatus.Playing || isUsed;
+            const isCorrect = solution?.includes(letter);
+            const shouldHighlight = isUsed && isDisabled;
+
+            return (
+              <Letter
+                aria-controls="chancesRemaining"
+                key={letter}
+                onClick={handleGuess}
+                letter={letter}
+                isDisabled={isDisabled}
+                isCorrect={isCorrect}
+                shouldHighlight={shouldHighlight}
+              />
+            );
+          })}
+        </div>
+        <nav>
+          {status === GameStatus.Playing && (
+            <div
+              css={css`
+                margin-bottom: ${space[3]}px;
+              `}
+            >
+              <span
+                css={css`
+                  margin-right: ${space[2]}px;
+                `}
+              >
+                <Button type="warning" onClick={handleGiveup} text="Give up!" />
+              </span>
+              <Button type="error" onClick={handleQuit} text="Quit Game" />
+            </div>
+          )}
+        </nav>
       </div>
     </div>
   );

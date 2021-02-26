@@ -1,32 +1,8 @@
 /* ===============
-LETTERS
-determine what is displayed
-on the keyboard. Make sure
-you include all letters that
-are in your solutions, these
-movies have no numbers or special
-characters
+MOVIES
+all numbers and special chars removed
 =============== */
-// prettier-ignore
-export const LETTERS = [
-  "a", "b", "c", "d", "e", "f", "g", "h", "i",
-  "j", "k", "l", "m", "n", "o", "p", "q", "r",
-  "s", "t", "u", "v", "w", "x", "y", "z",
-];
-
-/* ===============
-STARTING_CHANCES
-how many guesses a user
-has before the Hangman is dead
-=============== */
-export const STARTING_CHANCES = 7;
-
-/* ===============
-SOLUTIONS
-All the possible words,
-picked at random when playing
-=============== */
-export const SOLUTIONS = [
+const movies = [
   "a beautiful mind",
   "a charlie brown christmas",
   "a christmas story",
@@ -58,7 +34,7 @@ export const SOLUTIONS = [
   "booksmart",
   "boyhood",
   "bridesmaids",
-  "bridget jones’s diary",
+  "bridget joness diary",
   "call me by your name",
   "cast away",
   "chicken run",
@@ -104,7 +80,7 @@ export const SOLUTIONS = [
   "hereditary",
   "home again",
   "home alone",
-  "how the grinch stole christmas!",
+  "how the grinch stole christmas",
   "how to train your dragon",
   "hustlers",
   "i feel pretty",
@@ -115,13 +91,13 @@ export const SOLUTIONS = [
   "interstellar",
   "it",
   "it happened on fifth avenue",
-  "james bond: casino royale",
+  "casino royale",
   "jaws",
   "john wick",
   "jojo rabbit",
   "joyeux noël",
   "kill bill",
-  "kingsman: the secret service",
+  "kingsman the secret service",
   "klaus",
   "knives out",
   "knocked up",
@@ -144,11 +120,11 @@ export const SOLUTIONS = [
   "minority report",
   "mission impossible",
   "moana",
-  "monsters inc.",
+  "monsters inc",
   "moon",
   "moonlight",
-  "mother!",
-  "mulholland dr.",
+  "mother",
+  "mulholland dr",
   "munich",
   "my spy",
   "mystic river",
@@ -166,15 +142,15 @@ export const SOLUTIONS = [
   "ready player one",
   "ring",
   "rocky",
-  "rudolph, the red-nosed reindeer",
+  "rudolph, the rednosed reindeer",
   "run lola run",
   "saving private ryan",
-  "scoob!",
+  "scoob",
   "scream",
   "scrooge",
   "scrooged",
   "seven",
-  "shazam!",
+  "shazam",
   "shrek",
   "shutter island",
   "silent night",
@@ -185,7 +161,7 @@ export const SOLUTIONS = [
   "soul",
   "source code",
   "southpaw",
-  "spider-man",
+  "spiderman",
   "split",
   "spotlight",
   "star trek the wrath of khan",
@@ -251,7 +227,7 @@ export const SOLUTIONS = [
   "the wailing",
   "the witch",
   "there will be blood",
-  "there’s something about mary",
+  "theres something about mary",
   "thor",
   "titanic",
   "togo",
@@ -267,12 +243,14 @@ export const SOLUTIONS = [
   "us",
   "v for vendetta",
   "vice",
-  "wall-e",
+  "walle",
   "wedding crashers",
   "when harry met sally",
   "whiplash",
   "wonder",
-  "wreck-it ralph",
-  "you’ve got mail",
+  "wreckit ralph",
+  "youve got mail",
   "zoolander",
 ];
+
+export default movies;

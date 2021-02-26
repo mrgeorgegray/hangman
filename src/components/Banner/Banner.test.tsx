@@ -1,16 +1,48 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { ThemeProvider } from "@emotion/react";
 
-import Banner from ".";
+import Banner, { BannerProps } from ".";
+import { THEMES } from "../../config";
 
 describe("<Banner />", () => {
-  it("renders a error state", () => {
-    const { container } = render(<Banner type="error" text="uh oh" />);
+  const defaultProps: BannerProps = {
+    action: <span>Actions</span>,
+    message: "uh oh",
+    type: "error",
+  };
+
+  const buildSubject = (props = defaultProps) =>
+    render(
+      <ThemeProvider theme={THEMES.light}>
+        <Banner {...props} />
+      </ThemeProvider>
+    );
+
+  it("renders a banner", () => {
+    const { container } = buildSubject();
+
     expect(container).toMatchSnapshot();
   });
 
-  it("renders a success state", () => {
-    const { container } = render(<Banner type="success" text="woohoo" />);
-    expect(container).toMatchSnapshot();
+  it("renders a error type", () => {
+    const { getByRole } = buildSubject();
+
+    expect(getByRole("alert")).toHaveStyleRule(
+      "background-color",
+      THEMES.light.colors.softError
+    );
+  });
+
+  it("renders a success type", () => {
+    const { getByRole } = buildSubject({
+      ...defaultProps,
+      type: "success",
+    });
+
+    expect(getByRole("alert")).toHaveStyleRule(
+      "background-color",
+      THEMES.light.colors.softSuccess
+    );
   });
 });

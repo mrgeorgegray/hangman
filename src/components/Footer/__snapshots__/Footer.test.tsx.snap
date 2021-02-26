@@ -1,13 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Footer /> renders 1`] = `
+.emotion-0 {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
 <div>
   <footer
-    style="position: fixed; left: 0px; bottom: 0px; width: calc(100% - 20px); padding: 10px;"
+    class="emotion-0"
+    role="contentinfo"
   >
     <hr />
     <p>
-      Built with create-react-app.
+      Read more about
+       
+      <a
+        href="https://github.com/mrgeorgegray/hangman"
+      >
+        this project
+      </a>
+      .
     </p>
   </footer>
 </div>

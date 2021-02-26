@@ -1,29 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Letter /> highlights correct 1`] = `
-<div>
-  <button
-    style="border: 1px solid #c3c3c3; color: green; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
-  >
-    a
-  </button>
-</div>
-`;
-
-exports[`<Letter /> highlights incorrect 1`] = `
-<div>
-  <button
-    style="border: 1px solid #c3c3c3; color: red; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
-  >
-    a
-  </button>
-</div>
-`;
-
 exports[`<Letter /> renders 1`] = `
+.emotion-0 {
+  background-color: transparent;
+  border: 2px dashed transparent;
+  border-radius: 50%;
+  color: #30353B;
+  display: inline-block;
+  font-size: 22px;
+  height: 30px;
+  margin: 5px;
+  outline: none;
+  padding: 2px 10px 10px 10px;
+  text-align: center;
+  -webkit-transition: border 200ms ease-out;
+  transition: border 200ms ease-out;
+  width: 30px;
+}
+
+.emotion-0:hover:enabled {
+  border: 2px dashed #949DA5;
+  cursor: pointer;
+}
+
+@media (min-width: 500px) {
+  .emotion-0 {
+    font-size: 34px;
+    height: 50px;
+    width: 50px;
+  }
+}
+
 <div>
   <button
-    style="border: 1px solid #c3c3c3; width: 30px; height: 30px; display: inline-block; font-size: 18px; text-align: center; text-transform: uppercase; margin: 2px;"
+    class="emotion-0"
   >
     a
   </button>

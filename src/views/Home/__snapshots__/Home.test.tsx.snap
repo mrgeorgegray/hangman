@@ -1,15 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Home /> renders 1`] = `
+.emotion-0 {
+  padding-top: 32px;
+  text-align: center;
+}
+
+@media (min-width: 720px) {
+  .emotion-0 {
+    padding-top: 0;
+  }
+}
+
+.emotion-1 {
+  font-size: 50px;
+  line-height: 1;
+}
+
+.emotion-2 {
+  margin-bottom: 32px;
+}
+
+.emotion-3 {
+  background-color: #F5F5F5;
+  border: 2px solid #30353B;
+  border-radius: 3px;
+  color: #30353B;
+  font-size: 22px;
+  outline: none;
+  padding: 16px 24px;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
+.emotion-3:hover {
+  color: #F5F5F5;
+  cursor: pointer;
+  background-color: #27D545;
+  border-color: #27D545;
+}
+
 <div>
-  <div>
-    <h1>
-      Welcome to Hangman!
+  <div
+    class="emotion-0"
+  >
+    <h1
+      class="emotion-1"
+    >
+      Hangman
     </h1>
-    <p>
-      Press the button to get started...
+    <p
+      class="emotion-2"
+    >
+      A simple game built with React
     </p>
-    <button>
+    <button
+      class="emotion-3"
+    >
       Start Game
     </button>
   </div>

@@ -1,16 +1,25 @@
-const Footer = () => (
-  <footer
-    style={{
-      position: "fixed",
-      left: 0,
-      bottom: 0,
-      width: "calc(100% - 20px)",
-      padding: 10,
-    }}
-  >
-    <hr />
-    <p>Built with create-react-app.</p>
-  </footer>
-);
+/** @jsxImportSource @emotion/react */
+import { css, useTheme } from "@emotion/react";
+
+const Footer: React.FC = () => {
+  const { fontSize } = useTheme();
+
+  return (
+    <footer
+      role="contentinfo"
+      css={css`
+        flex-shrink: 0;
+        font-size: ${fontSize[0]}px;
+        text-align: center;
+      `}
+    >
+      <hr />
+      <p>
+        Read more about{" "}
+        <a href="https://github.com/mrgeorgegray/hangman">this project</a>.
+      </p>
+    </footer>
+  );
+};
 
 export default Footer;
