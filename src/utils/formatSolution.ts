@@ -1,18 +1,11 @@
 /**
- * Returns a random string from an array
- */
-export function sample(arr: string[]) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
-
-/**
  * Obscures the solution against user guesses
- * @param  {string} p1 - The full solution
- * @param  {string[]} p2 - An array of letters
- * @param  {string[]} p3 - An optional value to hide characters with, defaults to "_"
+ * @param  {string} solution - The full solution
+ * @param  {string[]} guesses - An array of letters
+ * @param  {string[]} hiddenCharacter - An optional value to hide characters with, defaults to "_"
  * @return {string} A formatted string
  */
-export function formatSolution(
+function formatSolution(
   solution: string,
   guesses: string[],
   hiddenCharacter = "_"
@@ -29,3 +22,5 @@ export function formatSolution(
     })
     .join("");
 }
+
+export default formatSolution;

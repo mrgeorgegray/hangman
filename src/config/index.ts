@@ -26,18 +26,16 @@ export const LETTERS = [
 ];
 
 /* ===============
-SOLUTIONS
-@todo topics etc.
+TOPICS
 =============== */
-export const SOLUTIONS = {
+export const TOPICS = {
   movies,
   sport,
   words,
 };
 
 /* ===============
-THEME
-@todo dark, a11y, etc.
+THEMES
 =============== */
 export const THEMES = {
   dark: darkTheme,

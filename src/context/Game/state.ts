@@ -1,7 +1,7 @@
 import produce, { Draft } from "immer";
 
-import { LETTERS, STARTING_CHANCES, SOLUTIONS, THEMES } from "../../config";
-import * as utils from "./utils";
+import { LETTERS, STARTING_CHANCES, TOPICS, THEMES } from "../../config";
+import { formatSolution, sample } from "../../utils";
 
 export enum GameStatus {
   NotStarted = "notStarted",
@@ -11,7 +11,8 @@ export enum GameStatus {
 }
 
 export type Theme = keyof typeof THEMES;
-export type Topic = keyof typeof SOLUTIONS;
+export type Topic = keyof typeof TOPICS;
+export const topicList: Topic[] = ["movies", "sport", "words"];
 
 // prettier-ignore
 export type GameAction =
@@ -20,7 +21,7 @@ export type GameAction =
   | { type: "quit" }
   | { type: "new" }
   | { type: "setTheme"; payload: { theme: Theme }; }
-  | { type: "setTopic"; payload: { topic: Topic }; }
+  | { type: "setTopicAndStart"; payload: { topic: Topic }; }
   | { type: "start" };
 
 export interface GameState {
@@ -57,14 +58,11 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
         return;
       }
 
-      const solution = utils.sample(SOLUTIONS[draft.topic]);
+      const solution = sample(TOPICS[draft.topic]);
       draft.chancesRemaining = STARTING_CHANCES;
       draft.guesses = [];
       draft.solution = solution;
-      draft.solutionFormatted = utils.formatSolution(
-        draft.solution,
-        draft.guesses
-      );
+      draft.solutionFormatted = formatSolution(draft.solution, draft.guesses);
       draft.status = GameStatus.Playing;
       return;
     }
@@ -91,10 +89,7 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
       const { letter } = action.payload;
 
       draft.guesses.push(action.payload.letter);
-      draft.solutionFormatted = utils.formatSolution(
-        draft.solution,
-        draft.guesses
-      );
+      draft.solutionFormatted = formatSolution(draft.solution, draft.guesses);
       draft.chancesRemaining = draft.solution.includes(letter)
         ? draft.chancesRemaining
         : draft.chancesRemaining - 1;
@@ -114,16 +109,13 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
       return;
     }
 
-    case "setTopic": {
+    case "setTopicAndStart": {
       draft.topic = action.payload.topic;
-      const solution = utils.sample(SOLUTIONS[draft.topic]);
+      const solution = sample(TOPICS[draft.topic]);
       draft.chancesRemaining = STARTING_CHANCES;
       draft.guesses = [];
       draft.solution = solution;
-      draft.solutionFormatted = utils.formatSolution(
-        draft.solution,
-        draft.guesses
-      );
+      draft.solutionFormatted = formatSolution(draft.solution, draft.guesses);
       return;
     }
 

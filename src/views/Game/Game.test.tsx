@@ -10,7 +10,7 @@ import {
   initialState,
   GameState,
 } from "../../context/Game/state";
-import * as utils from "../../context/Game/utils";
+import { formatSolution } from "../../utils";
 import { STARTING_CHANCES, THEMES } from "../../config";
 
 describe("<Game />", () => {
@@ -21,7 +21,7 @@ describe("<Game />", () => {
     chancesRemaining: STARTING_CHANCES,
     guesses: [],
     solution,
-    solutionFormatted: utils.formatSolution(solution, []),
+    solutionFormatted: formatSolution(solution, []),
     status: GameStatus.Playing,
     topic: "words",
   };
@@ -36,15 +36,6 @@ describe("<Game />", () => {
         </GameStateContext.Provider>
       </GameDispatchContext.Provider>
     );
-
-  it("renders topic selector", () => {
-    const { getByText } = buildSubject({
-      ...playingState,
-      topic: null,
-    });
-
-    expect(getByText("Choose a topic")).toBeInTheDocument();
-  });
 
   it("renders in play", () => {
     const { container } = buildSubject();

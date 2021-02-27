@@ -31,10 +31,11 @@ const Solution: React.FC<SolutionProps> = ({ status, text }) => {
         font-size: ${fontSize[3]}px;
         letter-spacing: 4px;
         line-height: 1.2;
-        padding: ${space[2]}px;
+        padding: 0 ${space[2]}px ${space[1]}px;
 
         @media (min-width: ${breakpoints.md}) {
           font-size: ${fontSize[4]}px;
+          padding: ${space[2]}px 0;
         }
       `}
     >

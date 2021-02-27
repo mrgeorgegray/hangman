@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Topics /> renders 1`] = `
+exports[`<SelectTopic /> renders 1`] = `
 .emotion-0 {
   text-align: center;
 }
@@ -22,6 +22,7 @@ exports[`<Topics /> renders 1`] = `
   font-size: 22px;
   outline: none;
   padding: 16px 24px;
+  margin: 0 4px;
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
 }

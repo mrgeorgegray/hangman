@@ -29,6 +29,7 @@ exports[`<Home /> renders 1`] = `
   font-size: 22px;
   outline: none;
   padding: 16px 24px;
+  margin: 0 4px;
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
 }

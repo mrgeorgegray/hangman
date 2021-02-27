@@ -82,12 +82,13 @@ exports[`<Game /> renders in play 1`] = `
   font-size: 34px;
   letter-spacing: 4px;
   line-height: 1.2;
-  padding: 16px;
+  padding: 0 16px 8px;
 }
 
 @media (min-width: 500px) {
   .emotion-5 {
     font-size: 50px;
+    padding: 16px 0;
   }
 }
 
@@ -142,14 +143,6 @@ exports[`<Game /> renders in play 1`] = `
 }
 
 .emotion-35 {
-  margin-bottom: 32px;
-}
-
-.emotion-36 {
-  margin-right: 16px;
-}
-
-.emotion-37 {
   background-color: #F5F5F5;
   border: 2px solid #30353B;
   border-radius: 3px;
@@ -157,18 +150,19 @@ exports[`<Game /> renders in play 1`] = `
   font-size: 18px;
   outline: none;
   padding: 12px 18px;
+  margin: 0 4px;
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
 }
 
-.emotion-37:hover {
+.emotion-35:hover {
   color: #F5F5F5;
   cursor: pointer;
   background-color: #FF7903;
   border-color: #FF7903;
 }
 
-.emotion-38 {
+.emotion-36 {
   background-color: #F5F5F5;
   border: 2px solid #30353B;
   border-radius: 3px;
@@ -176,11 +170,12 @@ exports[`<Game /> renders in play 1`] = `
   font-size: 18px;
   outline: none;
   padding: 12px 18px;
+  margin: 0 4px;
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
 }
 
-.emotion-38:hover {
+.emotion-36:hover {
   color: #F5F5F5;
   cursor: pointer;
   background-color: #FF0033;
@@ -391,20 +386,14 @@ exports[`<Game /> renders in play 1`] = `
         </button>
       </div>
       <nav>
-        <div
-          class="emotion-35"
-        >
-          <span
-            class="emotion-36"
-          >
-            <button
-              class="emotion-37"
-            >
-              Give up!
-            </button>
-          </span>
+        <div>
           <button
-            class="emotion-38"
+            class="emotion-35"
+          >
+            Give up!
+          </button>
+          <button
+            class="emotion-36"
           >
             Quit Game
           </button>

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ChancesCount /> renders 1`] = `
+.emotion-0 {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.emotion-1 {
+  color: #949DA5;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <p
+      aria-live="polite"
+      class="emotion-1"
+      id="chancesRemaining"
+    >
+      (chances remaining: 
+      2
+      )
+    </p>
+  </div>
+</div>
+`;

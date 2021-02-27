@@ -1,6 +1,12 @@
-import { initialState, curriedGameReducer, GameStatus } from "./state";
-import { STARTING_CHANCES } from "./../../config";
-import * as utils from "./utils";
+import {
+  initialState,
+  curriedGameReducer,
+  GameStatus,
+  topicList,
+} from "./state";
+import { STARTING_CHANCES, TOPICS } from "./../../config";
+import { formatSolution } from "../../utils";
+import * as sample from "../../utils/sample";
 
 describe("GameState", () => {
   const solution = "solution";
@@ -9,7 +15,7 @@ describe("GameState", () => {
     chancesRemaining: STARTING_CHANCES,
     guesses: [],
     solution,
-    solutionFormatted: utils.formatSolution(solution, []),
+    solutionFormatted: formatSolution(solution, []),
     status: GameStatus.Playing,
   };
 
@@ -24,29 +30,62 @@ describe("GameState", () => {
     });
   });
 
-  it("sets a topic", () => {
-    jest.spyOn(utils, "sample").mockReturnValue(solution);
+  it("sets a topic and starts", () => {
+    jest.spyOn(sample, "default").mockReturnValue(solution);
     const updatedState = curriedGameReducer(
       {
         ...initialState,
         status: GameStatus.Playing,
       },
       {
-        type: "setTopic",
+        type: "setTopicAndStart",
         payload: { topic: "words" },
       }
     );
 
     expect(updatedState).toEqual({
+      ...initialState,
       chancesRemaining: STARTING_CHANCES,
-      guesses: [],
-      letters: initialState.letters,
       solution: solution,
-      solutionFormatted: utils.formatSolution(solution, []),
+      solutionFormatted: formatSolution(solution, []),
       status: GameStatus.Playing,
-      theme: initialState.theme,
       topic: "words",
     });
+  });
+
+  it("begins a new game", () => {
+    jest.spyOn(sample, "default").mockReturnValue(solution);
+    const updatedState = curriedGameReducer(
+      {
+        ...initialState,
+        status: GameStatus.Playing,
+        topic: "words",
+      },
+      {
+        type: "new",
+      }
+    );
+
+    expect(updatedState).toEqual({
+      ...initialState,
+      chancesRemaining: STARTING_CHANCES,
+      solution: solution,
+      solutionFormatted: formatSolution(solution, []),
+      status: GameStatus.Playing,
+      topic: "words",
+    });
+  });
+
+  it("wont begin a new game without a topic", () => {
+    const currentState = {
+      ...initialState,
+      status: GameStatus.Playing,
+    };
+    const updatedState = curriedGameReducer(currentState, {
+      type: "new",
+    });
+
+    expect(updatedState).toEqual(currentState);
   });
 
   it("quits the game", () => {
@@ -112,7 +151,7 @@ describe("GameState", () => {
         ...playingState,
         chancesRemaining: STARTING_CHANCES,
         guesses: [letter],
-        solutionFormatted: utils.formatSolution(solution, [letter]),
+        solutionFormatted: formatSolution(solution, [letter]),
       });
     });
 
@@ -122,7 +161,7 @@ describe("GameState", () => {
       const almostFinishedState = {
         ...playingState,
         guesses: guesses,
-        solutionFormatted: utils.formatSolution(solution, guesses),
+        solutionFormatted: formatSolution(solution, guesses),
       };
       const updatedState = curriedGameReducer(almostFinishedState, {
         type: "guess",
