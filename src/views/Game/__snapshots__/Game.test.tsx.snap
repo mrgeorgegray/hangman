@@ -82,7 +82,7 @@ exports[`<Game /> renders in play 1`] = `
   font-size: 34px;
   letter-spacing: 4px;
   line-height: 1.2;
-  margin-bottom: 32;
+  padding: 16px;
 }
 
 @media (min-width: 500px) {

@@ -4,20 +4,26 @@ import { ThemeProvider } from "@emotion/react";
 
 import Home from ".";
 import { GameDispatchContext, GameStateContext } from "../../context/Game";
-import { GameAction, GameStatus, initialState } from "../../context/Game/state";
+import {
+  GameAction,
+  GameStatus,
+  initialState,
+  GameState,
+} from "../../context/Game/state";
 import * as utils from "../../context/Game/utils";
 import { STARTING_CHANCES, THEMES } from "../../config";
 
 describe("<Game />", () => {
   const mockDispatch: React.Dispatch<GameAction> = jest.fn();
   const solution = "solution";
-  const playingState = {
+  const playingState: GameState = {
     ...initialState,
     chancesRemaining: STARTING_CHANCES,
     guesses: [],
     solution,
     solutionFormatted: utils.formatSolution(solution, []),
     status: GameStatus.Playing,
+    topic: "words",
   };
 
   const buildSubject = (state = playingState) =>
@@ -30,6 +36,15 @@ describe("<Game />", () => {
         </GameStateContext.Provider>
       </GameDispatchContext.Provider>
     );
+
+  it("renders topic selector", () => {
+    const { getByText } = buildSubject({
+      ...playingState,
+      topic: null,
+    });
+
+    expect(getByText("Choose a topic")).toBeInTheDocument();
+  });
 
   it("renders in play", () => {
     const { container } = buildSubject();

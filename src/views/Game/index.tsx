@@ -3,12 +3,19 @@ import React from "react";
 import { css, useTheme } from "@emotion/react";
 
 import { useGameDispatch, useGameState } from "../../context/Game";
-import { GameStatus } from "../../context/Game/state";
+import { GameStatus, Topic } from "../../context/Game/state";
 import Banner from "../../components/Banner";
 import Button from "../../components/Button";
 import Hangman from "../../components/Hangman";
 import Letter from "../../components/Letter";
 import Solution from "../../components/Solution";
+import Topics from "../../components/Topics";
+
+const topics: { topic: Topic; title: string }[] = [
+  { topic: "movies", title: "Movies" },
+  { topic: "sport", title: "Sport" },
+  { topic: "words", title: "Words" },
+];
 
 const GamePage: React.FC = () => {
   const { breakpoints, colors, fontSize, space } = useTheme();
@@ -20,6 +27,7 @@ const GamePage: React.FC = () => {
     solution,
     solutionFormatted,
     status,
+    topic,
   } = useGameState();
 
   const handleGuess = React.useCallback(
@@ -44,7 +52,7 @@ const GamePage: React.FC = () => {
   );
 
   const handleNewGame = () => {
-    dispatch({ type: "start" });
+    dispatch({ type: "new" });
   };
 
   const handleQuit = () => {
@@ -53,6 +61,10 @@ const GamePage: React.FC = () => {
 
   const handleGiveup = () => {
     dispatch({ type: "giveup" });
+  };
+
+  const handleSetTopic = (topic: Topic) => {
+    dispatch({ type: "setTopic", payload: { topic } });
   };
 
   React.useEffect(() => {
@@ -66,6 +78,10 @@ const GamePage: React.FC = () => {
       window.removeEventListener("keyup", handleKeyup);
     };
   }, [status, handleKeyup]);
+
+  if (!topic) {
+    return <Topics handleTopicClick={handleSetTopic} topics={topics} />;
+  }
 
   return (
     <div

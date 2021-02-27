@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Topics /> renders 1`] = `
+.emotion-0 {
+  text-align: center;
+}
+
+.emotion-1 {
+  margin-bottom: 32px;
+  margin-top: 64px;
+}
+
+.emotion-2 {
+  margin-bottom: 16px;
+}
+
+.emotion-3 {
+  background-color: #F5F5F5;
+  border: 2px solid #30353B;
+  border-radius: 3px;
+  color: #30353B;
+  font-size: 22px;
+  outline: none;
+  padding: 16px 24px;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+
+.emotion-3:hover {
+  color: #F5F5F5;
+  cursor: pointer;
+  background-color: #30353B;
+  border-color: #30353B;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <p
+      class="emotion-1"
+    >
+      Choose a topic
+    </p>
+    <div
+      class="emotion-2"
+    >
+      <button
+        class="emotion-3"
+      >
+        Movies
+      </button>
+    </div>
+    <div
+      class="emotion-2"
+    >
+      <button
+        class="emotion-3"
+      >
+        Sport
+      </button>
+    </div>
+    <div
+      class="emotion-2"
+    >
+      <button
+        class="emotion-3"
+      >
+        Words
+      </button>
+    </div>
+  </div>
+</div>
+`;

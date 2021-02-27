@@ -11,13 +11,16 @@ export enum GameStatus {
 }
 
 export type Theme = keyof typeof THEMES;
+export type Topic = keyof typeof SOLUTIONS;
 
 // prettier-ignore
 export type GameAction =
   | { type: "giveup" }
   | { type: "guess"; payload: { letter: string }; }
   | { type: "quit" }
+  | { type: "new" }
   | { type: "setTheme"; payload: { theme: Theme }; }
+  | { type: "setTopic"; payload: { topic: Topic }; }
   | { type: "start" };
 
 export interface GameState {
@@ -28,6 +31,7 @@ export interface GameState {
   solutionFormatted: string;
   status: GameStatus;
   theme: Theme;
+  topic: Topic | null;
 }
 
 export const initialState: GameState = {
@@ -38,12 +42,22 @@ export const initialState: GameState = {
   solutionFormatted: "",
   status: GameStatus.NotStarted,
   theme: "light",
+  topic: null,
 };
 
 const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
   switch (action.type) {
     case "start": {
-      const solution = utils.sample(SOLUTIONS.words);
+      draft.status = GameStatus.Playing;
+      return;
+    }
+
+    case "new": {
+      if (!draft.topic) {
+        return;
+      }
+
+      const solution = utils.sample(SOLUTIONS[draft.topic]);
       draft.chancesRemaining = STARTING_CHANCES;
       draft.guesses = [];
       draft.solution = solution;
@@ -62,6 +76,7 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
       draft.solution = initialState.solution;
       draft.solutionFormatted = initialState.solutionFormatted;
       draft.status = initialState.status;
+      draft.topic = initialState.topic;
       return;
     }
 
@@ -96,6 +111,19 @@ const gameReducer = (draft: Draft<GameState>, action: GameAction) => {
 
     case "setTheme": {
       draft.theme = action.payload.theme;
+      return;
+    }
+
+    case "setTopic": {
+      draft.topic = action.payload.topic;
+      const solution = utils.sample(SOLUTIONS[draft.topic]);
+      draft.chancesRemaining = STARTING_CHANCES;
+      draft.guesses = [];
+      draft.solution = solution;
+      draft.solutionFormatted = utils.formatSolution(
+        draft.solution,
+        draft.guesses
+      );
       return;
     }
 

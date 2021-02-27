@@ -14,10 +14,28 @@ describe("GameState", () => {
   };
 
   it("starts a game", () => {
-    jest.spyOn(utils, "sample").mockReturnValue(solution);
     const updatedState = curriedGameReducer(initialState, {
       type: "start",
     });
+
+    expect(updatedState).toEqual({
+      ...initialState,
+      status: GameStatus.Playing,
+    });
+  });
+
+  it("sets a topic", () => {
+    jest.spyOn(utils, "sample").mockReturnValue(solution);
+    const updatedState = curriedGameReducer(
+      {
+        ...initialState,
+        status: GameStatus.Playing,
+      },
+      {
+        type: "setTopic",
+        payload: { topic: "words" },
+      }
+    );
 
     expect(updatedState).toEqual({
       chancesRemaining: STARTING_CHANCES,
@@ -27,6 +45,7 @@ describe("GameState", () => {
       solutionFormatted: utils.formatSolution(solution, []),
       status: GameStatus.Playing,
       theme: initialState.theme,
+      topic: "words",
     });
   });
 
@@ -63,6 +82,7 @@ describe("GameState", () => {
       solutionFormatted: solution,
       status: GameStatus.Lost,
       theme: initialState.theme,
+      topic: null,
     });
   });
 

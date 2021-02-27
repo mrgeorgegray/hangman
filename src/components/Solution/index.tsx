@@ -31,7 +31,7 @@ const Solution: React.FC<SolutionProps> = ({ status, text }) => {
         font-size: ${fontSize[3]}px;
         letter-spacing: 4px;
         line-height: 1.2;
-        margin-bottom: ${space[3]};
+        padding: ${space[2]}px;
 
         @media (min-width: ${breakpoints.md}) {
           font-size: ${fontSize[4]}px;

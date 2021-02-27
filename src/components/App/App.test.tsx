@@ -23,6 +23,29 @@ describe("<App />", () => {
     expect(getByText("A simple game built with React")).toBeInTheDocument();
   });
 
+  it("renders topics when topic is not set", () => {
+    const playingState = {
+      ...initialState,
+      chancesRemaining: 6,
+      guesses: [],
+      solution: "solution",
+      solutionFormatted: "_______",
+      status: GameStatus.Playing,
+    };
+
+    const { getByText } = render(
+      <GameDispatchContext.Provider value={jest.fn()}>
+        <GameStateContext.Provider value={playingState}>
+          <ThemeProvider theme={THEMES.light}>
+            <App />
+          </ThemeProvider>
+        </GameStateContext.Provider>
+      </GameDispatchContext.Provider>
+    );
+
+    expect(getByText(`Choose a topic`)).toBeInTheDocument();
+  });
+
   it("renders the game when status is NOT 'notStarted' ", () => {
     const playingState = {
       ...initialState,
@@ -31,6 +54,7 @@ describe("<App />", () => {
       solution: "solution",
       solutionFormatted: "_______",
       status: GameStatus.Playing,
+      topic: "words" as const,
     };
 
     const { getByText } = render(
