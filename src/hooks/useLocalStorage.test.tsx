@@ -3,14 +3,6 @@ import { render, fireEvent } from "@testing-library/react";
 
 import useLocalStorage from "./useLocalStorage";
 
-Object.defineProperty(window, "localStorage", {
-  value: {
-    getItem: jest.fn(() => null),
-    setItem: jest.fn(() => null),
-  },
-  writable: true,
-});
-
 type State = Record<string, string>;
 
 describe("useLocalStorage()", () => {
