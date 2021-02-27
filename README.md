@@ -1,21 +1,15 @@
-# Hangman App
+# Hangman
 
 [![Coverage Status](https://coveralls.io/repos/github/mrgeorgegray/hangman/badge.svg?branch=main)](https://coveralls.io/github/mrgeorgegray/hangman?branch=main)
 ![Status](https://github.com/mrgeorgegray/hangman/actions/workflows/test.yml/badge.svg)
 
 A simple [hangman](<https://en.wikipedia.org/wiki/Hangman_(game)>) game built using [React](https://reactjs.org/).
 
-```_
- | |
- | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __
- | '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \
- | | | | (_| | | | | (_| | | | | | | (_| | | | |
- |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                     __/ |
-                    |___/
-```
+## Play 🚀
 
-## Development
+This application is hosted on gh-pages, [give it a go](https://mrgeorgegray.github.io/hangman).
+
+## Development 🔨
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -23,9 +17,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - `yarn test`, Launches the test runner in the interactive watch mode.
 - `yarn build`, Builds the app for production to the `build` folder.
 
-## Credits
-
-This project makes use of the following libraries.
+## Libraries & Tools 🔖
 
 - [TypeScript](https://www.typescriptlang.org/) Static type definitions for JS
 - [immer](https://github.com/immerjs/immer) Immutable state
