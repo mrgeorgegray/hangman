@@ -1,6 +1,6 @@
 # Hangman App
 
-[![Coverage Status](https://coveralls.io/repos/github/mrgeorgegray/dawn-till-dusk/badge.svg?branch=main)](https://coveralls.io/github/mrgeorgegray/hangman?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/mrgeorgegray/hangman/badge.svg?branch=main)](https://coveralls.io/github/mrgeorgegray/hangman?branch=main)
 ![Status](https://github.com/mrgeorgegray/hangman/actions/workflows/test.yml/badge.svg)
 
 A simple [hangman](<https://en.wikipedia.org/wiki/Hangman_(game)>) game built using [React](https://reactjs.org/).
