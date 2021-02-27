@@ -5,14 +5,15 @@ import { css, Global, useTheme } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 
 import { useGameDispatch, useGameState } from "../../context/Game";
-import Game from "../../views/Game";
-import Home from "../../views/Home";
-import Footer from "../Footer";
-import ThemeSwitch from "../ThemeSwitch";
+import Game from "../Game";
+import Home from "../Home";
+import SelectTopic from "../SelectTopic";
+import Footer from "../../components/Footer";
+import ThemeSwitch from "../../components/ThemeSwitch";
 
 const App: React.FC = () => {
   const { breakpoints, colors, fontSize, layout, space } = useTheme();
-  const { status, theme } = useGameState();
+  const { status, theme, topic } = useGameState();
   const dispatch = useGameDispatch();
 
   function handleThemeChange() {
@@ -42,6 +43,7 @@ const App: React.FC = () => {
           }
           a {
             color: ${colors.link};
+
             &:hover {
               color: ${colors.linkHover};
             }
@@ -67,7 +69,9 @@ const App: React.FC = () => {
             flex-grow: 1;
           `}
         >
-          {status === "notStarted" ? <Home /> : <Game />}
+          {status === "notStarted" && <Home />}
+          {status !== "notStarted" && !topic && <SelectTopic />}
+          {status !== "notStarted" && topic && <Game />}
         </main>
         <Footer />
         <ThemeSwitch currentTheme={theme} handleChange={handleThemeChange} />

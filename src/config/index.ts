@@ -1,4 +1,6 @@
 import movies from "./movies";
+import sport from "./sport";
+import words from "./words";
 import { darkTheme, lightTheme } from "./themes";
 
 /* ===============
@@ -24,16 +26,16 @@ export const LETTERS = [
 ];
 
 /* ===============
-SOLUTIONS
-@todo topics etc.
+TOPICS
 =============== */
-export const SOLUTIONS = {
+export const TOPICS = {
   movies,
+  sport,
+  words,
 };
 
 /* ===============
-THEME
-@todo dark, a11y, etc.
+THEMES
 =============== */
 export const THEMES = {
   dark: darkTheme,

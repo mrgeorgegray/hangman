@@ -3,12 +3,11 @@ import React from "react";
 import { css, useTheme } from "@emotion/react";
 
 export interface BannerProps {
-  action: JSX.Element;
   message: string;
   type: "error" | "success";
 }
 
-const Banner: React.FC<BannerProps> = ({ action, message, type }) => {
+const Banner: React.FC<BannerProps> = ({ children, message, type }) => {
   const { border, breakpoints, colors, layout, space } = useTheme();
 
   return (
@@ -50,7 +49,7 @@ const Banner: React.FC<BannerProps> = ({ action, message, type }) => {
       >
         <strong>{message}</strong>
       </span>
-      {action}
+      {children}
     </div>
   );
 };

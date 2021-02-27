@@ -49,9 +49,7 @@ exports[`<Banner /> renders a banner 1`] = `
         uh oh
       </strong>
     </span>
-    <span>
-      Actions
-    </span>
+    Children
   </div>
 </div>
 `;

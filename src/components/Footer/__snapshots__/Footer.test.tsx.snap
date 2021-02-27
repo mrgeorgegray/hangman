@@ -6,6 +6,7 @@ exports[`<Footer /> renders 1`] = `
   -ms-flex-negative: 0;
   flex-shrink: 0;
   font-size: 14px;
+  padding-top: 32px;
   text-align: center;
 }
 

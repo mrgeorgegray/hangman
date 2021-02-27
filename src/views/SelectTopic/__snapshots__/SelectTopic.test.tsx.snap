@@ -1,24 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Home /> renders 1`] = `
+exports[`<SelectTopic /> renders 1`] = `
 .emotion-0 {
-  padding-top: 32px;
   text-align: center;
 }
 
-@media (min-width: 720px) {
-  .emotion-0 {
-    padding-top: 0;
-  }
-}
-
 .emotion-1 {
-  font-size: 50px;
-  line-height: 1;
+  margin-bottom: 32px;
+  margin-top: 64px;
 }
 
 .emotion-2 {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .emotion-3 {
@@ -37,29 +30,46 @@ exports[`<Home /> renders 1`] = `
 .emotion-3:hover {
   color: #F5F5F5;
   cursor: pointer;
-  background-color: #27D545;
-  border-color: #27D545;
+  background-color: #30353B;
+  border-color: #30353B;
 }
 
 <div>
   <div
     class="emotion-0"
   >
-    <h1
+    <p
       class="emotion-1"
     >
-      Hangman
-    </h1>
-    <p
+      Choose a topic
+    </p>
+    <div
       class="emotion-2"
     >
-      A simple game built with React
-    </p>
-    <button
-      class="emotion-3"
+      <button
+        class="emotion-3"
+      >
+        Movies
+      </button>
+    </div>
+    <div
+      class="emotion-2"
     >
-      Start Game
-    </button>
+      <button
+        class="emotion-3"
+      >
+        Sport
+      </button>
+    </div>
+    <div
+      class="emotion-2"
+    >
+      <button
+        class="emotion-3"
+      >
+        Words
+      </button>
+    </div>
   </div>
 </div>
 `;

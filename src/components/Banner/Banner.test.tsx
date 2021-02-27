@@ -7,7 +7,6 @@ import { THEMES } from "../../config";
 
 describe("<Banner />", () => {
   const defaultProps: BannerProps = {
-    action: <span>Actions</span>,
     message: "uh oh",
     type: "error",
   };
@@ -15,7 +14,7 @@ describe("<Banner />", () => {
   const buildSubject = (props = defaultProps) =>
     render(
       <ThemeProvider theme={THEMES.light}>
-        <Banner {...props} />
+        <Banner {...props}>Children</Banner>
       </ThemeProvider>
     );
 

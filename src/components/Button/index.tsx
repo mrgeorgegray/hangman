@@ -10,7 +10,7 @@ export interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ onClick, size, text, type }) => {
-  const { border, colors, fontSize, transitions } = useTheme();
+  const { border, colors, fontSize, space, transitions } = useTheme();
 
   return (
     <button
@@ -22,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, size, text, type }) => {
         font-size: ${size === "large" ? fontSize[2] : fontSize[1]}px;
         outline: none;
         padding: ${size === "large" ? `16px 24px` : `12px 18px`};
+        margin: 0 ${space[0]}px;
         transition: all ${transitions[0]}s ease-in;
 
         &:hover {

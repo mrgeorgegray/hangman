@@ -6,12 +6,13 @@ exports[`<Solution /> renders inPlay 1`] = `
   font-size: 34px;
   letter-spacing: 4px;
   line-height: 1.2;
-  margin-bottom: 32;
+  padding: 0 16px 8px;
 }
 
 @media (min-width: 500px) {
   .emotion-0 {
     font-size: 50px;
+    padding: 16px 0;
   }
 }
 
