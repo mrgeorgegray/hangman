@@ -1,6 +1,7 @@
 # Hangman App
 
-[![CircleCI](https://circleci.com/gh/mrgeorgegray/hangman.svg?style=svg)](https://circleci.com/gh/mrgeorgegray/hangman)
+[![Coverage Status](https://coveralls.io/repos/github/mrgeorgegray/dawn-till-dusk/badge.svg?branch=main)](https://coveralls.io/github/mrgeorgegray/hangman?branch=main)
+![Status](https://github.com/mrgeorgegray/hangman/actions/workflows/test.yml/badge.svg)
 
 A simple [hangman](<https://en.wikipedia.org/wiki/Hangman_(game)>) game built using [React](https://reactjs.org/).
 
