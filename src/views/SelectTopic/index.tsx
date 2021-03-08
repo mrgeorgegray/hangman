@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { css, useTheme } from "@emotion/react";
 
 import { useGameDispatch } from "../../context/Game";
@@ -7,7 +6,7 @@ import { Topic, topicList } from "../../context/Game/state";
 import Button from "../../components/Button";
 import { capitaliseFirstLetter } from "../../utils";
 
-const SelectTopic: React.FC = () => {
+const SelectTopic = () => {
   const { space } = useTheme();
   const dispatch = useGameDispatch();
 

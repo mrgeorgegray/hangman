@@ -10,10 +10,7 @@ export interface ThemeSwitchProps {
   handleChange: () => void;
 }
 
-const ThemeSwitch: React.FC<ThemeSwitchProps> = ({
-  currentTheme,
-  handleChange,
-}) => {
+const ThemeSwitch = ({ currentTheme, handleChange }: ThemeSwitchProps) => {
   const { colors, space, transitions } = useTheme();
   const isDarkEnabled = currentTheme === "dark";
 

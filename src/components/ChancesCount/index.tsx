@@ -5,7 +5,7 @@ interface ChancesCountProps {
   chancesRemaining: number;
 }
 
-const ChancesCount: React.FC<ChancesCountProps> = ({ chancesRemaining }) => {
+const ChancesCount = ({ chancesRemaining }: ChancesCountProps) => {
   const { colors, fontSize, space } = useTheme();
 
   return (

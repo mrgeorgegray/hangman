@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { css, useTheme } from "@emotion/react";
 
 import { useGameDispatch } from "../../context/Game";
 import Button from "../../components/Button";
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   const { breakpoints, fontSize, space } = useTheme();
   const dispatch = useGameDispatch();
 

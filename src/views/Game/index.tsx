@@ -11,7 +11,7 @@ import Hangman from "../../components/Hangman";
 import Letter from "../../components/Letter";
 import Solution from "../../components/Solution";
 
-const GamePage: React.FC = () => {
+const GamePage = () => {
   const { breakpoints, space } = useTheme();
   const dispatch = useGameDispatch();
   const {

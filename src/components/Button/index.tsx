@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { css, useTheme } from "@emotion/react";
 
 export interface ButtonProps {
@@ -9,7 +8,7 @@ export interface ButtonProps {
   type: "error" | "plain" | "success" | "warning";
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, size, text, type }) => {
+const Button = ({ onClick, size, text, type }: ButtonProps) => {
   const { border, colors, fontSize, space, transitions } = useTheme();
 
   return (
