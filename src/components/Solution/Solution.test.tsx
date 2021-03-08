@@ -1,10 +1,7 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import { ThemeProvider } from "@emotion/react";
-
-import Solution, { SolutionProps } from ".";
+import { render } from "../../testUtils";
 import { THEMES } from "../../config";
 import { GameStatus } from "../../context/Game/state";
+import Solution, { SolutionProps } from ".";
 
 describe("<Solution />", () => {
   const defaultProps: SolutionProps = {
@@ -13,11 +10,7 @@ describe("<Solution />", () => {
   };
 
   const buildSubject = (props = defaultProps) =>
-    render(
-      <ThemeProvider theme={THEMES.light}>
-        <Solution {...props} />
-      </ThemeProvider>
-    );
+    render(<Solution {...props} />);
 
   it("renders inPlay", () => {
     const { container } = buildSubject();

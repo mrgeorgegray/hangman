@@ -1,9 +1,6 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "@emotion/react";
-
-import Letter, { LetterProps } from ".";
+import { render, fireEvent } from "../../testUtils";
 import { THEMES } from "../../config";
+import Letter, { LetterProps } from ".";
 
 describe.only("<Letter />", () => {
   const defaultProps: LetterProps = {
@@ -14,12 +11,7 @@ describe.only("<Letter />", () => {
     shouldHighlight: false,
   };
 
-  const buildSubject = (props = defaultProps) =>
-    render(
-      <ThemeProvider theme={THEMES.light}>
-        <Letter {...props} />
-      </ThemeProvider>
-    );
+  const buildSubject = (props = defaultProps) => render(<Letter {...props} />);
 
   it("renders", () => {
     const { container } = buildSubject();

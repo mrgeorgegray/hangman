@@ -1,9 +1,6 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "@emotion/react";
-
-import Button, { ButtonProps } from ".";
+import { render, fireEvent } from "../../testUtils";
 import { THEMES } from "../../config";
+import Button, { ButtonProps } from ".";
 
 describe("<Button />", () => {
   const defaultProps: ButtonProps = {
@@ -12,12 +9,7 @@ describe("<Button />", () => {
     type: "plain",
   };
 
-  const buildSubject = (props = defaultProps) =>
-    render(
-      <ThemeProvider theme={THEMES.light}>
-        <Button {...props} />
-      </ThemeProvider>
-    );
+  const buildSubject = (props = defaultProps) => render(<Button {...props} />);
 
   it("renders plain", () => {
     const { container } = buildSubject();

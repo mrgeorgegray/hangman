@@ -1,17 +1,9 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import { ThemeProvider } from "@emotion/react";
-
+import { render } from "../../testUtils";
 import Hangman from ".";
-import { THEMES } from "../../config";
 
 describe("<Hangman />", () => {
   const buildSubject = (chancesRemaining: number) =>
-    render(
-      <ThemeProvider theme={THEMES.light}>
-        <Hangman chancesRemaining={chancesRemaining} />
-      </ThemeProvider>
-    );
+    render(<Hangman chancesRemaining={chancesRemaining} />);
 
   it("renders gallows", () => {
     const { container } = buildSubject(6);

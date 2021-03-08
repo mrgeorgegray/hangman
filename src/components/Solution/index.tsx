@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { css, useTheme } from "@emotion/react";
 
 import { GameStatus } from "../../context/Game/state";
@@ -8,7 +7,7 @@ export interface SolutionProps {
   text: string;
 }
 
-const Solution: React.FC<SolutionProps> = ({ status, text }) => {
+const Solution = ({ status, text }: SolutionProps) => {
   const { breakpoints, colors, fontSize, space } = useTheme();
   let textColor: string;
 

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React, { Fragment } from "react";
+import React from "react";
 import { css, Global, useTheme } from "@emotion/react";
 import emotionNormalize from "emotion-normalize";
 
@@ -11,7 +11,7 @@ import SelectTopic from "../SelectTopic";
 import Footer from "../../components/Footer";
 import ThemeSwitch from "../../components/ThemeSwitch";
 
-const App: React.FC = () => {
+const App = () => {
   const { breakpoints, colors, fontSize, layout, space } = useTheme();
   const { status, theme, topic } = useGameState();
   const dispatch = useGameDispatch();
@@ -25,7 +25,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <Fragment>
+    <React.Fragment>
       <Global
         styles={css`
           ${emotionNormalize}
@@ -76,7 +76,7 @@ const App: React.FC = () => {
         <Footer />
         <ThemeSwitch currentTheme={theme} handleChange={handleThemeChange} />
       </div>
-    </Fragment>
+    </React.Fragment>
   );
 };
 

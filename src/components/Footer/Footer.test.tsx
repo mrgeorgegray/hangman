@@ -1,17 +1,9 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import { ThemeProvider } from "@emotion/react";
-
+import { render } from "../../testUtils";
 import Footer from ".";
-import { THEMES } from "../../config";
 
 describe("<Footer />", () => {
   it("renders", () => {
-    const { container } = render(
-      <ThemeProvider theme={THEMES.light}>
-        <Footer />
-      </ThemeProvider>
-    );
+    const { container } = render(<Footer />);
 
     expect(container).toMatchSnapshot();
   });

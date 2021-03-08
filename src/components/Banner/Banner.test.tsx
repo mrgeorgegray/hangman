@@ -1,9 +1,6 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import { ThemeProvider } from "@emotion/react";
-
-import Banner, { BannerProps } from ".";
+import { render } from "../../testUtils";
 import { THEMES } from "../../config";
+import Banner, { BannerProps } from ".";
 
 describe("<Banner />", () => {
   const defaultProps: BannerProps = {
@@ -12,11 +9,7 @@ describe("<Banner />", () => {
   };
 
   const buildSubject = (props = defaultProps) =>
-    render(
-      <ThemeProvider theme={THEMES.light}>
-        <Banner {...props}>Children</Banner>
-      </ThemeProvider>
-    );
+    render(<Banner {...props}>Children</Banner>);
 
   it("renders a banner", () => {
     const { container } = buildSubject();

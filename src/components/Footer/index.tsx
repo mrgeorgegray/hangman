@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css, useTheme } from "@emotion/react";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   const { fontSize, space } = useTheme();
 
   return (
